@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">DuckPermission</string>
-    <string name="request_audio_record">Reuqest Audio Record</string>
+    <string name="request_audio_record">语音/录音权限</string>
 </resources>
