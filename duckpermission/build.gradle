@@ -1,11 +1,10 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.nasduck'
+ext.githubProjectName = 'duck-permission'
 
 android {
     compileSdkVersion 28
-
-
 
     defaultConfig {
         minSdkVersion 14
