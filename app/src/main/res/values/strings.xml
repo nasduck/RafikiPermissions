@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DuckPermission</string>
-    <string name="request_audio_record">Reuqest Audio Record</string>
+    <string name="request_audio_record">Request Audio Record</string>
+    <string name="request_access_fine_location">Request Access Fine Location</string>
 </resources>

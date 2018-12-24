@@ -1,4 +1,4 @@
-package com.nasduck.duckpermission;
+package com.nasduck.duckPermissionDemo;
 
 import org.junit.Test;
 

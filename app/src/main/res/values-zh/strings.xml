@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DuckPermission</string>
     <string name="request_audio_record">语音/录音权限</string>
+    <string name="request_access_fine_location">定位</string>
 </resources>
