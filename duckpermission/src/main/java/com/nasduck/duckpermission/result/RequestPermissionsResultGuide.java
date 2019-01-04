@@ -18,18 +18,12 @@ public class RequestPermissionsResultGuide implements IDuckPermissionResult {
     @Override
     public boolean onPermissionsResult(Activity activity, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        List<String> deniedPermissionList = new ArrayList<>();
+        List<String> deniedPermissions = PermissionUtils.filterDeniedPermissions(permissions, grantResults);
 
-        for (int i = 0; i < grantResults.length; i++) {
-            if(grantResults[i] == PackageManager.PERMISSION_DENIED) {
-                deniedPermissionList.add(permissions[i]);
-            }
-        }
-
-        if (deniedPermissionList.size() == 0) {
+        if (deniedPermissions.size() == 0) {
             return true;
         } else {
-            String name = PermissionUtils.getInstance().getPermissionNames(deniedPermissionList);
+            String name = PermissionUtils.getInstance().getPermissionNames(deniedPermissions);
             SetPermissions.openAppDetails(activity, name);
             return false;
         }
