@@ -11,7 +11,6 @@ import com.nasduck.duckpermission.DuckPermission;
 public class MainActivity extends AppCompatActivity {
 
     private final static int AUDIO_RECORD_CODE = 1;
-    private final static int ACCESS_FINE_LOCATION_CODE = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +23,14 @@ public class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         switch (requestCode) {
-            case AUDIO_RECORD_CODE:
+            case DuckPermission.RESULT_CODE_RECORD_AUDIO:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case ACCESS_FINE_LOCATION_CODE:
+            case DuckPermission.RESULT_CODE_ACCESS_FINE_LOCATION:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
@@ -43,19 +42,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void onAudioRecordClick(View view) {
         if (DuckPermission.getInstance(this)
-                .setResultCode(AUDIO_RECORD_CODE)
-                .requestAudioRecord()
-                .request()) {
+                .requestAudioRecord()) {
             Toast.makeText(this, "Already granted audio record permission", Toast.LENGTH_SHORT).show();
         }
     }
 
     public void onAccessFineLocationClick(View view) {
         if (DuckPermission.getInstance(this)
-                .setResultCode(ACCESS_FINE_LOCATION_CODE)
-                .requestAccessFineLocation()
-                .request()) {
+                .requestAccessFineLocation()) {
             Toast.makeText(this, "Already granted access fine location permission", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void onXXXXClick(View view) {
+        if (DuckPermission.getInstance(this)
+                .addAudioRecord()
+                .setResultCode(AUDIO_RECORD_CODE)
+                .request()) {
+            Toast.makeText(this, "Already granted audio record permission", Toast.LENGTH_SHORT).show();
         }
     }
 }

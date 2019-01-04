@@ -1,10 +1,50 @@
-package com.nasduck.duckpermission;
+package com.nasduck.duckpermission.util;
+
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.support.v4.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class PermissionUtils {
+
+    public static List<String> filterDeniedPermissions(Context context, List<String> permissions) {
+        List<String> deniedPermissions = new ArrayList<>();
+
+        for (String permission : permissions) {
+            if (ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_DENIED) {
+                deniedPermissions.add(permission);
+            }
+        }
+
+        return deniedPermissions;
+    }
+
+    public static List<String> filterDeniedPermissions(Context context, String[] permissions) {
+        List<String> deniedPermissions = new ArrayList<>();
+
+        for (String permission : permissions) {
+            if (ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_DENIED) {
+                deniedPermissions.add(permission);
+            }
+        }
+
+        return deniedPermissions;
+    }
+
+    public static List<String> filterDeniedPermissions(String[] permissions, int[] grantResults) {
+        List<String> deniedPermissions = new ArrayList<>();
+
+        for (int i = 0; i < grantResults.length; i++) {
+            if(grantResults[i] == PackageManager.PERMISSION_DENIED) {
+                deniedPermissions.add(permissions[i]);
+            }
+        }
+
+        return deniedPermissions;
+    }
 
     private static PermissionUtils permissionUtils;
     public static PermissionUtils getInstance(){
@@ -15,7 +55,7 @@ public class PermissionUtils {
     }
 
     private HashMap<String,String> permissions;
-    public HashMap<String,String> getPermissions(){
+    public HashMap<String,String> getPermissions() {
         if(permissions == null){
             permissions = new HashMap<>();
             initPermissions();
@@ -60,7 +100,7 @@ public class PermissionUtils {
         permissions.put("android.permission.READ_CELL_BROADCASTS","--短信");
     }
 
-    public String getPermissionNames(List<String> permission){
+    public String getPermissionNames(List<String> permission) {
         if(permission==null || permission.size()==0){
             return "\n";
         }
@@ -68,6 +108,7 @@ public class PermissionUtils {
         List<String> list = new ArrayList<>();
 
         HashMap<String, String> permissions = getPermissions();
+
         for(int i=0; i<permission.size(); i++){
             String name = permissions.get(permission.get(i));
             if(name != null && !list.contains(name)) {

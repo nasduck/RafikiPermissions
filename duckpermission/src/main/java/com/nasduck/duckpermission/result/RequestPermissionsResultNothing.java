@@ -1,11 +1,11 @@
-package com.nasduck.duckpermission;
+package com.nasduck.duckpermission.result;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 
 /**
- * 如果授权失败，不做任何处理
+ * Do nothing if not granted
  */
 public class RequestPermissionsResultNothing implements IDuckPermissionResult {
 
