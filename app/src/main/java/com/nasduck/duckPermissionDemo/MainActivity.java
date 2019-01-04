@@ -43,19 +43,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void onAudioRecordClick(View view) {
         if (DuckPermission.getInstance(this)
-                .setResultCode(AUDIO_RECORD_CODE)
-                .requestAudioRecord()
-                .request()) {
+                .requestAudioRecord()) {
             Toast.makeText(this, "Already granted audio record permission", Toast.LENGTH_SHORT).show();
         }
     }
 
     public void onAccessFineLocationClick(View view) {
         if (DuckPermission.getInstance(this)
-                .setResultCode(ACCESS_FINE_LOCATION_CODE)
-                .requestAccessFineLocation()
-                .request()) {
+                .requestAccessFineLocation()) {
             Toast.makeText(this, "Already granted access fine location permission", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void onXXXXClick(View view) {
+        if (DuckPermission.getInstance(this)
+                .addAudioRecord()
+                .setResultCode(AUDIO_RECORD_CODE)
+                .request()) {
+            Toast.makeText(this, "Already granted audio record permission", Toast.LENGTH_SHORT).show();
         }
     }
 }

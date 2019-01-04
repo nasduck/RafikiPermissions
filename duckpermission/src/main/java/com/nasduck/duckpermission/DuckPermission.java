@@ -11,6 +11,8 @@ import java.util.List;
 public class DuckPermission {
 
     public final static int DUCK_PERMISSION_RESULT_CODE = 999;
+    public final static int RESULT_CODE_RECORD_AUDIO = -999;
+    public final static int RESULT_CODE_ACCESS_FINE_LOCATION = -998;
 
     private static DuckPermission DEFAULT;
 
@@ -42,6 +44,10 @@ public class DuckPermission {
     }
 
     public boolean request() {
+        return request(mResultCode);
+    }
+
+    public boolean request(int resultCode) {
         // If below 6.0, no need to request
         if(Build.VERSION.SDK_INT < 23){
             return true;
@@ -55,8 +61,9 @@ public class DuckPermission {
             return true;
         }
 
+        // Request Permissions
         String[] deniedPermissionArray = deniedPermissionList.toArray(new String[deniedPermissionList.size()]);
-        ActivityCompat.requestPermissions(mActivity, deniedPermissionArray, mResultCode);
+        ActivityCompat.requestPermissions(mActivity, deniedPermissionArray, resultCode);
 
         return false;
     }
@@ -89,18 +96,30 @@ public class DuckPermission {
         this.mPermissionList = new ArrayList<>();
     }
 
-    public DuckPermission requestPermissions(List<String> permissions) {
+    public DuckPermission addPermissions(List<String> permissions) {
         this.mPermissionList.addAll(permissions);
         return this;
     }
 
-    public DuckPermission requestAudioRecord() {
+    public DuckPermission addAudioRecord() {
         this.mPermissionList.add(Manifest.permission.RECORD_AUDIO);
         return this;
     }
 
-    public DuckPermission requestAccessFineLocation() {
+    public DuckPermission addAccessFineLocation() {
         this.mPermissionList.add(Manifest.permission.ACCESS_FINE_LOCATION);
         return this;
+    }
+
+    //
+
+    public Boolean requestAudioRecord() {
+        this.addAudioRecord();
+        return request(RESULT_CODE_RECORD_AUDIO);
+    }
+
+    public Boolean requestAccessFineLocation() {
+        this.addAccessFineLocation();
+        return request(RESULT_CODE_ACCESS_FINE_LOCATION);
     }
 }
