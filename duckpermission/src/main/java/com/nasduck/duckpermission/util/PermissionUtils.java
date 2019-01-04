@@ -1,4 +1,4 @@
-package com.nasduck.duckpermission;
+package com.nasduck.duckpermission.util;
 
 import java.util.ArrayList;
 import java.util.HashMap;

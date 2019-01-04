@@ -5,6 +5,9 @@ import android.app.Activity;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 
+import com.nasduck.duckpermission.result.IDuckPermissionResult;
+import com.nasduck.duckpermission.result.RequestPermissionsResultNothing;
+
 import java.util.ArrayList;
 import java.util.List;
 
