@@ -7,6 +7,7 @@ import android.support.v4.app.ActivityCompat;
 
 import com.nasduck.duckpermission.result.IDuckPermissionResult;
 import com.nasduck.duckpermission.result.RequestPermissionsResultNothing;
+import com.nasduck.duckpermission.util.PermissionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,15 +58,15 @@ public class DuckPermission {
         }
 
         // Filter Permissions not granted yet
-        List<String> deniedPermissionList =
-                PermissionFilter.getDeniedPermissionList(mActivity, mPermissionList);
+        List<String> deniedPermissions =
+                PermissionUtils.filterDeniedPermissions(mActivity, mPermissionList);
 
-        if(deniedPermissionList.size() == 0) {
+        if(deniedPermissions.size() == 0) {
             return true;
         }
 
         // Request Permissions
-        String[] deniedPermissionArray = deniedPermissionList.toArray(new String[deniedPermissionList.size()]);
+        String[] deniedPermissionArray = deniedPermissions.toArray(new String[deniedPermissions.size()]);
         ActivityCompat.requestPermissions(mActivity, deniedPermissionArray, resultCode);
 
         return false;
