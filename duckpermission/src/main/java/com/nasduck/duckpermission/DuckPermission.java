@@ -99,5 +99,8 @@ public class DuckPermission {
         return this;
     }
 
-
+    public DuckPermission requestAccessFineLocation() {
+        this.mPermissionList.add(Manifest.permission.ACCESS_FINE_LOCATION);
+        return this;
+    }
 }

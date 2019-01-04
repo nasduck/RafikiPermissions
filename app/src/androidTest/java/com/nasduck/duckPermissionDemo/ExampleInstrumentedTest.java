@@ -1,4 +1,4 @@
-package com.nasduck.duckpermission;
+package com.nasduck.duckPermissionDemo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
