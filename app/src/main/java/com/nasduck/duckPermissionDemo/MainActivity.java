@@ -37,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
+            case DuckPermission.RESULT_ACCESS_COARSE_LOCATION:
+                if (DuckPermission.getInstance(this).result(grantResults)) {
+                    Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
+                }
+                break;
         }
     }
 
@@ -51,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
         if (DuckPermission.getInstance(this)
                 .requestAccessFineLocation()) {
             Toast.makeText(this, "Already granted access fine location permission", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void onAccessCoarseLocationClick(View view) {
+        if (DuckPermission.getInstance(this)
+                .requestAccessFineLocation()) {
+            Toast.makeText(this, "Already granted access coarse location permission", Toast.LENGTH_SHORT).show();
         }
     }
 

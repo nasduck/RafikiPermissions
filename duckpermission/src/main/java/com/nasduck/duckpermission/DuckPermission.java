@@ -15,8 +15,10 @@ import java.util.List;
 public class DuckPermission {
 
     public final static int DUCK_PERMISSION_RESULT_CODE = 999;
-    public final static int RESULT_CODE_RECORD_AUDIO = -999;
-    public final static int RESULT_CODE_ACCESS_FINE_LOCATION = -998;
+    public final static int RESULT_CODE_RECORD_AUDIO = 998;
+    // LOCATION
+    public final static int RESULT_CODE_ACCESS_FINE_LOCATION = 997;
+    public final static int RESULT_ACCESS_COARSE_LOCATION = 996;
 
     private static DuckPermission DEFAULT;
 
@@ -115,6 +117,11 @@ public class DuckPermission {
         return this;
     }
 
+    public DuckPermission addAccessCoarseLocation() {
+        this.mPermissionList.add(Manifest.permission.ACCESS_COARSE_LOCATION);
+        return this;
+    }
+
     //
 
     public Boolean requestAudioRecord() {
@@ -125,5 +132,10 @@ public class DuckPermission {
     public Boolean requestAccessFineLocation() {
         this.addAccessFineLocation();
         return request(RESULT_CODE_ACCESS_FINE_LOCATION);
+    }
+
+    public Boolean requestAccessCoarseLocation() {
+        this.addAccessCoarseLocation();
+        return request(RESULT_ACCESS_COARSE_LOCATION);
     }
 }
