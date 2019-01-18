@@ -23,4 +23,12 @@
         android:text="@string/request_access_fine_location"
         android:onClick="onAccessFineLocationClick"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:text="@string/request_access_coarse_location"
+        android:onClick="onAccessCoarseLocationClick"/>
+
 </LinearLayout>
