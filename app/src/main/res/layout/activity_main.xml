@@ -42,25 +42,18 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:onClick="onAudioRecordClick"
-        android:text="@string/request_audio_record"
+        android:onClick="onLocationGroupClick"
+        android:text="@string/group_location"
         android:textAlignment="center"
         android:textSize="16sp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:onClick="onAccessFineLocationClick"
-        android:text="@string/request_access_fine_location"
+        android:onClick="onMicrophoneGroupClick"
+        android:text="@string/group_microphone"
         android:textAlignment="center"
         android:textSize="16sp" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:onClick="onAccessCoarseLocationClick"
-        android:text="@string/request_access_coarse_location"
-        android:textAlignment="center"
-        android:textSize="16sp" />
 
 </LinearLayout>
