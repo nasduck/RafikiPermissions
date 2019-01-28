@@ -59,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onSMSGroupClick(View view) {
+        Intent intent = new Intent(MainActivity.this, SMSActivity.class);
+        startActivity(intent);
+    }
+
     public void onXXXXClick(View view) {
         if (DuckPermission.getInstance(this)
                 .addAudioRecord()

@@ -234,6 +234,31 @@ public class DuckPermission {
         return this;
     }
 
+    public DuckPermission addSendSMS() {
+        this.mPermissionList.add(Manifest.permission.SEND_SMS);
+        return this;
+    }
+
+    public DuckPermission addReceiveSMS() {
+        this.mPermissionList.add(Manifest.permission.RECEIVE_SMS);
+        return this;
+    }
+
+    public DuckPermission addReadSMS() {
+        this.mPermissionList.add(Manifest.permission.READ_SMS);
+        return this;
+    }
+
+    public DuckPermission addReceiveWapPush() {
+        this.mPermissionList.add(Manifest.permission.RECEIVE_WAP_PUSH);
+        return this;
+    }
+
+    public DuckPermission addReceiveMMS() {
+        this.mPermissionList.add(Manifest.permission.RECEIVE_MMS);
+        return this;
+    }
+
     //* request **********************************************************************************//
 
     public Boolean requestReadCalendar() {
@@ -329,5 +354,30 @@ public class DuckPermission {
     public Boolean requestBodySensors() {
         this.addBodySensors();
         return request(RESULT_CODE_BODY_SENSORS);
+    }
+
+    public Boolean requestSendSMS() {
+        this.addSendSMS();
+        return request(RESULT_CODE_SEND_SMS);
+    }
+
+    public Boolean requestReceiveSMS() {
+        this.addReceiveSMS();
+        return request(RESULT_CODE_RECEIVE_SMS);
+    }
+
+    public Boolean requestReadSMS() {
+        this.addReadSMS();
+        return request(RESULT_CODE_READ_SMS);
+    }
+
+    public Boolean requestReceiveWapPush() {
+        this.addReceiveWapPush();
+        return request(RESULT_CODE_RECEIVE_WAP_PUSH);
+    }
+
+    public Boolean requestReceiveMMS() {
+        this.addReceiveMMS();
+        return request(RESULT_CODE_RECEIVE_MMS);
     }
 }
