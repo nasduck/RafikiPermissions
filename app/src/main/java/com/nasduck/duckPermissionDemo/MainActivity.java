@@ -57,6 +57,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onCameraGroupClick(View view) {
+        Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+        startActivity(intent);
+    }
+
     public void onAudioRecordClick(View view) {
         if (DuckPermission.getInstance(this)
                 .requestAudioRecord()) {

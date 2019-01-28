@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:textSize="16sp"
-        android:textAlignment="center"
+        android:onClick="onReadCallLogClick"
         android:text="@string/request_read_call_log"
-        android:onClick="onReadCallLogClick"/>
+        android:textAlignment="center"
+        android:textSize="16sp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:textSize="16sp"
-        android:textAlignment="center"
+        android:onClick="onWriteCallLogClick"
         android:text="@string/request_write_call_log"
-        android:onClick="onWriteCallLogClick"/>
+        android:textAlignment="center"
+        android:textSize="16sp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:textSize="16sp"
-        android:textAlignment="center"
+        android:onClick="onProcessOutgoingCallsClick"
         android:text="@string/request_process_outgoing_calls"
-        android:onClick="onProcessOutgoingCallsClick"/>
+        android:textAlignment="center"
+        android:textSize="16sp" />
 
 </LinearLayout>

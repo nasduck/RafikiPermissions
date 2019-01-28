@@ -164,6 +164,11 @@ public class DuckPermission {
         return this;
     }
 
+    public DuckPermission addCamera() {
+        this.mPermissionList.add(Manifest.permission.CAMERA);
+        return this;
+    }
+
     public DuckPermission addAudioRecord() {
         this.mPermissionList.add(Manifest.permission.RECORD_AUDIO);
         return this;
@@ -206,6 +211,11 @@ public class DuckPermission {
     public Boolean requestProcessOutgoingCalls() {
         this.addProcessOutgoingCalls();
         return request(RESULT_CODE_PROCESS_OUTGOING_CALLS);
+    }
+
+    public Boolean requestCamera() {
+        this.addCamera();
+        return request(RESULT_CODE_CAMERA);
     }
 
     public Boolean requestAudioRecord() {

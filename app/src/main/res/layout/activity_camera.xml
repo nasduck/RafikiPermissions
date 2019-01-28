@@ -7,16 +7,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:onClick="onReadCalendarClick"
-        android:text="@string/request_read_calendar"
-        android:textAlignment="center"
-        android:textSize="16sp" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:onClick="onWriteCalendarClick"
-        android:text="@string/request_write_calendar"
+        android:onClick="onCameraClick"
+        android:text="@string/request_camera"
         android:textAlignment="center"
         android:textSize="16sp" />
 

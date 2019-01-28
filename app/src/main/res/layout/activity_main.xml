@@ -10,41 +10,49 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:textSize="16sp"
-        android:textAlignment="center"
+        android:onClick="onCalendarGroupClick"
         android:text="@string/group_calendar"
-        android:onClick="onCalendarGroupClick"/>
+        android:textAlignment="center"
+        android:textSize="16sp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:textSize="16sp"
-        android:textAlignment="center"
+        android:onClick="onCallLogGroupClick"
         android:text="@string/group_call_log"
-        android:onClick="onCallLogGroupClick"/>
+        android:textAlignment="center"
+        android:textSize="16sp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:textSize="16sp"
+        android:onClick="onCameraGroupClick"
+        android:text="@string/group_camera"
         android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onAudioRecordClick"
         android:text="@string/request_audio_record"
-        android:onClick="onAudioRecordClick"/>
+        android:textAlignment="center"
+        android:textSize="16sp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:textSize="16sp"
-        android:textAlignment="center"
+        android:onClick="onAccessFineLocationClick"
         android:text="@string/request_access_fine_location"
-        android:onClick="onAccessFineLocationClick"/>
+        android:textAlignment="center"
+        android:textSize="16sp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:textSize="16sp"
-        android:textAlignment="center"
+        android:onClick="onAccessCoarseLocationClick"
         android:text="@string/request_access_coarse_location"
-        android:onClick="onAccessCoarseLocationClick"/>
+        android:textAlignment="center"
+        android:textSize="16sp" />
 
 </LinearLayout>
