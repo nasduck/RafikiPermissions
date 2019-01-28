@@ -19,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
-
     public void onCalendarGroupClick(View view) {
         Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
         startActivity(intent);
@@ -53,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onPhoneGroupClick(View view) {
         Intent intent = new Intent(MainActivity.this, PhoneActivity.class);
+        startActivity(intent);
+    }
+
+    public void onSensorsGroupClick(View view) {
+        Intent intent = new Intent(MainActivity.this, SensorsActivity.class);
         startActivity(intent);
     }
 

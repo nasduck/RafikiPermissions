@@ -229,6 +229,11 @@ public class DuckPermission {
         return this;
     }
 
+    public DuckPermission addBodySensors() {
+        this.mPermissionList.add(Manifest.permission.BODY_SENSORS);
+        return this;
+    }
+
     //* request **********************************************************************************//
 
     public Boolean requestReadCalendar() {
@@ -319,5 +324,10 @@ public class DuckPermission {
     public Boolean requestUseSip() {
         this.addUseSip();
         return request(RESULT_CODE_USE_SIP);
+    }
+
+    public Boolean requestBodySensors() {
+        this.addBodySensors();
+        return request(RESULT_CODE_BODY_SENSORS);
     }
 }

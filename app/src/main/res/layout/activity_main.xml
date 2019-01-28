@@ -63,4 +63,12 @@
         android:textAlignment="center"
         android:textSize="16sp" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onSensorsGroupClick"
+        android:text="@string/group_sensors"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
 </LinearLayout>
