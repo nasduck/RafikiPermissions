@@ -169,6 +169,21 @@ public class DuckPermission {
         return this;
     }
 
+    public DuckPermission addReadContacts() {
+        this.mPermissionList.add(Manifest.permission.READ_CONTACTS);
+        return this;
+    }
+
+    public DuckPermission addWriteContacts() {
+        this.mPermissionList.add(Manifest.permission.WRITE_CONTACTS);
+        return this;
+    }
+
+    public DuckPermission addGetAccounts() {
+        this.mPermissionList.add(Manifest.permission.GET_ACCOUNTS);
+        return this;
+    }
+
     public DuckPermission addAudioRecord() {
         this.mPermissionList.add(Manifest.permission.RECORD_AUDIO);
         return this;
@@ -216,6 +231,21 @@ public class DuckPermission {
     public Boolean requestCamera() {
         this.addCamera();
         return request(RESULT_CODE_CAMERA);
+    }
+
+    public Boolean requestReadContacts() {
+        this.addReadContacts();
+        return request(RESULT_CODE_READ_CONTACTS);
+    }
+
+    public Boolean requestWriteContacts() {
+        this.addWriteContacts();
+        return request(RESULT_CODE_WRITE_CONTACTS);
+    }
+
+    public Boolean requestGetAccounts() {
+        this.addGetAccounts();
+        return request(RESULT_CODE_GET_ACCOUNTS);
     }
 
     public Boolean requestAudioRecord() {
