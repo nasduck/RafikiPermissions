@@ -51,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onPhoneGroupClick(View view) {
+        Intent intent = new Intent(MainActivity.this, PhoneActivity.class);
+        startActivity(intent);
+    }
+
     public void onXXXXClick(View view) {
         if (DuckPermission.getInstance(this)
                 .addAudioRecord()

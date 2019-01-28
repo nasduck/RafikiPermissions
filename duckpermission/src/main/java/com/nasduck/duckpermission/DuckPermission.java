@@ -38,7 +38,7 @@ public class DuckPermission {
     public final static int RESULT_CODE_READ_PHONE_NUMBERS= 985;
     public final static int RESULT_CODE_CALL_PHONE= 984;
     public final static int RESULT_CODE_ANSWER_PHONE_CALLS= 983;
-    public final static int RESULT_CODE_ADD_VOICEMAIL= 982;
+    public final static int RESULT_CODE_ADD_VOICE_MAIL = 982;
     public final static int RESULT_CODE_USE_SIP= 981;
     // SENSORS
     public final static int RESULT_CODE_BODY_SENSORS = 980;
@@ -199,7 +199,35 @@ public class DuckPermission {
         return this;
     }
 
+    public DuckPermission addReadPhoneState() {
+        this.mPermissionList.add(Manifest.permission.READ_PHONE_STATE);
+        return this;
+    }
 
+    public DuckPermission addReadPhoneNumbers() {
+        this.mPermissionList.add(Manifest.permission.READ_PHONE_NUMBERS);
+        return this;
+    }
+
+    public DuckPermission addCallPhone() {
+        this.mPermissionList.add(Manifest.permission.CALL_PHONE);
+        return this;
+    }
+
+    public DuckPermission addAnswerPhoneCalls() {
+        this.mPermissionList.add(Manifest.permission.ANSWER_PHONE_CALLS);
+        return this;
+    }
+
+    public DuckPermission addAddVoiceMail() {
+        this.mPermissionList.add(Manifest.permission.ADD_VOICEMAIL);
+        return this;
+    }
+
+    public DuckPermission addUseSip() {
+        this.mPermissionList.add(Manifest.permission.USE_SIP);
+        return this;
+    }
 
     //* request **********************************************************************************//
 
@@ -261,5 +289,35 @@ public class DuckPermission {
     public Boolean requestAccessCoarseLocation() {
         this.addAccessCoarseLocation();
         return request(RESULT_ACCESS_COARSE_LOCATION);
+    }
+
+    public Boolean requestReadPhoneState() {
+        this.addReadPhoneState();
+        return request(RESULT_CODE_READ_PHONE_STATE);
+    }
+
+    public Boolean requestReadPhoneNumbers() {
+        this.addReadPhoneNumbers();
+        return request(RESULT_CODE_READ_PHONE_NUMBERS);
+    }
+
+    public Boolean requestCallPhone() {
+        this.addCallPhone();
+        return request(RESULT_CODE_CALL_PHONE);
+    }
+
+    public Boolean requestAnswerPhoneCalls() {
+        this.addAnswerPhoneCalls();
+        return request(RESULT_CODE_ANSWER_PHONE_CALLS);
+    }
+
+    public Boolean requestAddVoiceMail() {
+        this.addAddVoiceMail();
+        return request(RESULT_CODE_ADD_VOICE_MAIL);
+    }
+
+    public Boolean requestUseSip() {
+        this.addUseSip();
+        return request(RESULT_CODE_USE_SIP);
     }
 }
