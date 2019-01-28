@@ -79,4 +79,11 @@
         android:textAlignment="center"
         android:textSize="16sp" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onStorageGroupClick"
+        android:text="@string/group_storage"
+        android:textAlignment="center"
+        android:textSize="16sp" />
 </LinearLayout>

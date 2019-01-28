@@ -259,6 +259,16 @@ public class DuckPermission {
         return this;
     }
 
+    public DuckPermission addReadExternalStorage() {
+        this.mPermissionList.add(Manifest.permission.READ_EXTERNAL_STORAGE);
+        return this;
+    }
+
+    public DuckPermission addWriteExternalStorage() {
+        this.mPermissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        return this;
+    }
+
     //* request **********************************************************************************//
 
     public Boolean requestReadCalendar() {
@@ -379,5 +389,15 @@ public class DuckPermission {
     public Boolean requestReceiveMMS() {
         this.addReceiveMMS();
         return request(RESULT_CODE_RECEIVE_MMS);
+    }
+
+    public Boolean requestReadExternalStorage() {
+        this.addReadExternalStorage();
+        return request(RESULT_CODE_READ_EXTERNAL_STORAGE);
+    }
+
+    public Boolean requestWriteExternalStorage() {
+        this.addWriteExternalStorage();
+        return request(RESULT_CODE_WRITE_EXTERNAL_STORAGE);
     }
 }

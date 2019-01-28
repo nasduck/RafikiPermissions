@@ -64,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onStorageGroupClick(View view) {
+        Intent intent = new Intent(MainActivity.this, StorageActivity.class);
+        startActivity(intent);
+    }
+
     public void onXXXXClick(View view) {
         if (DuckPermission.getInstance(this)
                 .addAudioRecord()
