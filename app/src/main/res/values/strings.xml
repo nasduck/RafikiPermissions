@@ -38,7 +38,7 @@
     <string name="request_use_sip">Request Use Sip</string>
 
     <string name="request_body_sensors">Request Body Sensors</string>
-    
+
     <string name="request_send_sms">Request Send Sms</string>
     <string name="request_receive_sms">Request Receive Sms</string>
     <string name="request_read_sms">Request Read Sms</string>

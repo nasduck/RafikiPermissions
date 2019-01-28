@@ -149,6 +149,21 @@ public class DuckPermission {
         return this;
     }
 
+    public DuckPermission addReadCallLog() {
+        this.mPermissionList.add(Manifest.permission.READ_CALL_LOG);
+        return this;
+    }
+
+    public DuckPermission addWriteCallLog() {
+        this.mPermissionList.add(Manifest.permission.WRITE_CALL_LOG);
+        return this;
+    }
+
+    public DuckPermission addProcessOutgoingCalls() {
+        this.mPermissionList.add(Manifest.permission.PROCESS_OUTGOING_CALLS);
+        return this;
+    }
+
     public DuckPermission addAudioRecord() {
         this.mPermissionList.add(Manifest.permission.RECORD_AUDIO);
         return this;
@@ -176,6 +191,21 @@ public class DuckPermission {
     public Boolean requestWriteCalendar() {
         this.addWriteCalendar();
         return request(RESULT_CODE_WRITE_CALENDAR);
+    }
+
+    public Boolean requestReadCallLog() {
+        this.addReadCallLog();
+        return request(RESULT_CODE_READ_CALL_LOG);
+    }
+
+    public Boolean requestWriteCallLog() {
+        this.addWriteCallLog();
+        return request(RESULT_CODE_WRITE_CALL_LOG);
+    }
+
+    public Boolean requestProcessOutgoingCalls() {
+        this.addProcessOutgoingCalls();
+        return request(RESULT_CODE_PROCESS_OUTGOING_CALLS);
     }
 
     public Boolean requestAudioRecord() {
