@@ -1,5 +1,6 @@
 package com.nasduck.duckPermissionDemo;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
         switch (requestCode) {
             case DuckPermission.RESULT_CODE_RECORD_AUDIO:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
@@ -47,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void onCalendarGroupClick(View view) {
+        Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+        startActivity(intent);
+    }
+
     public void onAudioRecordClick(View view) {
         if (DuckPermission.getInstance(this)
                 .requestAudioRecord()) {
@@ -63,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onAccessCoarseLocationClick(View view) {
         if (DuckPermission.getInstance(this)
-                .requestAccessFineLocation()) {
+                .requestAccessCoarseLocation()) {
             Toast.makeText(this, "Already granted access coarse location permission", Toast.LENGTH_SHORT).show();
         }
     }
