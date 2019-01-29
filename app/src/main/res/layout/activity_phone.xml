@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onReadPhoneStateClick"
+        android:text="@string/request_read_phone_state"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onReadPhoneNumbersClick"
+        android:text="@string/request_read_phone_numbers"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onCallPhoneClick"
+        android:text="@string/request_call_phone"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onAnswerPhoneCallsClick"
+        android:text="@string/request_answer_phone_calls"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onAddVoiceMailClick"
+        android:text="@string/request_add_voice_mail"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onUseSipClick"
+        android:text="@string/request_use_sip"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+</LinearLayout>

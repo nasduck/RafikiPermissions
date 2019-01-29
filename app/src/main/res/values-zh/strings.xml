@@ -1,6 +1,50 @@
 <resources>
     <string name="app_name">DuckPermission</string>
-    <string name="request_audio_record">语音/录音权限</string>
-    <string name="request_access_fine_location">定位</string>
-    <string name="request_access_coarse_location">粗略定位</string>
+
+    <string name="group_calendar">Calendar权限组</string>
+    <string name="group_call_log">Call Log权限组</string>
+    <string name="group_camera">Camera权限组</string>
+    <string name="group_contacts">Contacts权限组</string>
+    <string name="group_location">Location权限组</string>
+    <string name="group_microphone">Microphone权限组</string>
+    <string name="group_phone">Phone权限组</string>
+    <string name="group_sensors">Sensors权限组</string>
+    <string name="group_sms">SMS权限组</string>
+    <string name="group_storage">Storage权限组</string>
+
+    <string name="request_read_calendar">请求读取日历数据</string>
+    <string name="request_write_calendar">请求写入日历数据</string>
+
+    <string name="request_read_call_log">请求读取通话记录</string>
+    <string name="request_write_call_log">请求写入通话记录</string>
+    <string name="request_process_outgoing_calls">请求查看拨出、呼叫期间拨打的号码</string>
+
+    <string name="request_camera">请求访问相机</string>
+
+    <string name="request_read_contacts">请求读取联系人数据</string>
+    <string name="request_write_contacts">请求写入联系人数据</string>
+    <string name="request_get_accounts">请求访问“帐户服务”中的帐户列表</string>
+
+    <string name="request_access_fine_location">请求访问精确位置</string>
+    <string name="request_access_coarse_location">请求访问大致位置</string>
+
+    <string name="request_audio_record">请求录制权限</string>
+
+    <string name="request_read_phone_state">请求只读状态下访问电话状态</string>
+    <string name="request_read_phone_numbers">请求读取设备的电话号码</string>
+    <string name="request_call_phone">请求发起电话呼叫</string>
+    <string name="request_answer_phone_calls">请求接听来电</string>
+    <string name="request_add_voice_mail">请求语音邮件添加到系统中</string>
+    <string name="request_use_sip">请求使用SIP服务</string>
+
+    <string name="request_body_sensors">请求传感器数据</string>
+
+    <string name="request_send_sms">请求发送短信</string>
+    <string name="request_receive_sms">请求接收短信</string>
+    <string name="request_read_sms">请求读取短信</string>
+    <string name="request_receive_wap_push">请求接收WAP推送消息</string>
+    <string name="request_receive_mms">请求监控传入的MMS消息</string>
+
+    <string name="request_read_external_storage">请求读取外部存储</string>
+    <string name="request_write_external_storage">请求写入外部存储</string>
 </resources>
