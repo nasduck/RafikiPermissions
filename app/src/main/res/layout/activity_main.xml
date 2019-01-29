@@ -10,25 +10,80 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:textSize="16sp"
+        android:onClick="onCalendarGroupClick"
+        android:text="@string/group_calendar"
         android:textAlignment="center"
-        android:text="@string/request_audio_record"
-        android:onClick="onAudioRecordClick"/>
+        android:textSize="16sp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:textSize="16sp"
+        android:onClick="onCallLogGroupClick"
+        android:text="@string/group_call_log"
         android:textAlignment="center"
-        android:text="@string/request_access_fine_location"
-        android:onClick="onAccessFineLocationClick"/>
+        android:textSize="16sp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:textSize="16sp"
+        android:onClick="onCameraGroupClick"
+        android:text="@string/group_camera"
         android:textAlignment="center"
-        android:text="@string/request_access_coarse_location"
-        android:onClick="onAccessCoarseLocationClick"/>
+        android:textSize="16sp" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onContactsGroupClick"
+        android:text="@string/group_contacts"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onLocationGroupClick"
+        android:text="@string/group_location"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onMicrophoneGroupClick"
+        android:text="@string/group_microphone"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onPhoneGroupClick"
+        android:text="@string/group_phone"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onSensorsGroupClick"
+        android:text="@string/group_sensors"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onSMSGroupClick"
+        android:text="@string/group_sms"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onStorageGroupClick"
+        android:text="@string/group_storage"
+        android:textAlignment="center"
+        android:textSize="16sp" />
 </LinearLayout>

@@ -1,6 +1,50 @@
 <resources>
     <string name="app_name">DuckPermission</string>
-    <string name="request_audio_record">Request Audio Record</string>
+
+    <string name="group_calendar">Group Calendar</string>
+    <string name="group_call_log">Group Call Log</string>
+    <string name="group_camera">Group Camera</string>
+    <string name="group_contacts">Group Contacts</string>
+    <string name="group_location">Group Location</string>
+    <string name="group_microphone">Group Microphone</string>
+    <string name="group_phone">Group Phone</string>
+    <string name="group_sensors">Group Sensors</string>
+    <string name="group_sms">Group SMS</string>
+    <string name="group_storage">Group Storage</string>
+
+    <string name="request_read_calendar">Request Read Calendar</string>
+    <string name="request_write_calendar">Request Write Calendar</string>
+
+    <string name="request_read_call_log">Request Read Call LOG</string>
+    <string name="request_write_call_log">Request Write Call Log</string>
+    <string name="request_process_outgoing_calls">Request Process Outgoing Calls</string>
+
+    <string name="request_camera">Request Camera</string>
+
+    <string name="request_read_contacts">Request Read Contacts</string>
+    <string name="request_write_contacts">Request Write Contacts</string>
+    <string name="request_get_accounts">Request Get Accounts</string>
+
     <string name="request_access_fine_location">Request Access Fine Location</string>
     <string name="request_access_coarse_location">Request Access Coarse Location</string>
+
+    <string name="request_audio_record">Request Audio Record</string>
+
+    <string name="request_read_phone_state">Request Read Phone State</string>
+    <string name="request_read_phone_numbers">Request Read Phone Numbers</string>
+    <string name="request_call_phone">Request Call Phone</string>
+    <string name="request_answer_phone_calls">Request Answer Phone Calls</string>
+    <string name="request_add_voice_mail">Request Add Voice Mail</string>
+    <string name="request_use_sip">Request Use Sip</string>
+
+    <string name="request_body_sensors">Request Body Sensors</string>
+
+    <string name="request_send_sms">Request Send Sms</string>
+    <string name="request_receive_sms">Request Receive Sms</string>
+    <string name="request_read_sms">Request Read Sms</string>
+    <string name="request_receive_wap_push">Request Receive Wap Push</string>
+    <string name="request_receive_mms">Request Receive Mms</string>
+
+    <string name="request_read_external_storage">Request Read External Storage</string>
+    <string name="request_write_external_storage">Request Write External Storage</string>
 </resources>
