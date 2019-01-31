@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.demo.utils.ToastUtils;
 import com.nasduck.duckpermission.result.RequestPermissionsResultGuide;
 import com.nasduck.duckpermission.result.RequestPermissionsResultNothing;
 import com.nasduck.duckpermission.result.code.DuckResultCode;
@@ -26,9 +27,9 @@ public class StrategyActivity extends AppCompatActivity {
 
         if (requestCode == DuckResultCode.RESULT_CODE_CAMERA) {
             if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
-                Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(this, "Granted");
             } else {
-                Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(this, "Denied");
             }
         }
     }

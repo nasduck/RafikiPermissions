@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.demo.utils.ToastUtils;
 import com.nasduck.duckpermission.result.code.DuckResultCode;
 
 public class ContactsActivity extends AppCompatActivity {
@@ -23,23 +24,23 @@ public class ContactsActivity extends AppCompatActivity {
         switch (requestCode) {
             case DuckResultCode.RESULT_CODE_READ_CONTACTS:
                 if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
-                    Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
+                    ToastUtils.showToast(this, "Granted");
                 } else {
-                    Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
+                    ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_WRITE_CONTACTS:
                 if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
-                    Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
+                    ToastUtils.showToast(this, "Granted");
                 } else {
-                    Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
+                    ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_GET_ACCOUNTS:
                 if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
-                    Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
+                    ToastUtils.showToast(this, "Granted");
                 } else {
-                    Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
+                    ToastUtils.showToast(this, "Denied");
                 }
                 break;
         }
