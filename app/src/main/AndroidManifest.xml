@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nasduck.duckPermissionDemo">
+    package="com.nasduck.duckpermission.demo">
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
@@ -36,23 +36,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StorageActivity"></activity>
-        <activity android:name=".SMSActivity" />
-        <activity android:name=".SensorsActivity" />
-        <activity android:name=".PhoneActivity" />
-        <activity android:name=".MicrophoneActivity" />
-        <activity android:name=".LocationActivity" />
-        <activity android:name=".ContactsActivity" />
-        <activity android:name=".CameraActivity" />
-        <activity android:name=".CallLogActivity" />
-        <activity android:name=".CalendarActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.nasduck.duckpermission.demo.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.nasduck.duckpermission.demo.StorageActivity"/>
+        <activity android:name="com.nasduck.duckpermission.demo.SMSActivity" />
+        <activity android:name="com.nasduck.duckpermission.demo.SensorsActivity" />
+        <activity android:name="com.nasduck.duckpermission.demo.PhoneActivity" />
+        <activity android:name="com.nasduck.duckpermission.demo.MicrophoneActivity" />
+        <activity android:name="com.nasduck.duckpermission.demo.LocationActivity" />
+        <activity android:name="com.nasduck.duckpermission.demo.ContactsActivity" />
+        <activity android:name="com.nasduck.duckpermission.demo.CameraActivity" />
+        <activity android:name="com.nasduck.duckpermission.demo.CallLogActivity" />
+        <activity android:name="com.nasduck.duckpermission.demo.CalendarActivity" />
     </application>
 
 </manifest>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DuckPermission</string>
+    <string name="app_name">DuckPermissionDemo</string>
 
     <string name="group_calendar">Group Calendar</string>
     <string name="group_call_log">Group Call Log</string>

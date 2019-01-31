@@ -1,4 +1,4 @@
-package com.nasduck.duckPermissionDemo;
+package com.nasduck.duckpermission.demo;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;

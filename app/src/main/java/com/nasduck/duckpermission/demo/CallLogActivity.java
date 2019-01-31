@@ -1,4 +1,4 @@
-package com.nasduck.duckPermissionDemo;
+package com.nasduck.duckpermission.demo;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -8,26 +8,33 @@ import android.widget.Toast;
 
 import com.nasduck.duckpermission.DuckPermission;
 
-public class LocationActivity extends AppCompatActivity {
+public class CallLogActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_location);
+        setContentView(R.layout.activity_call_log);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case DuckPermission.RESULT_CODE_ACCESS_FINE_LOCATION:
+            case DuckPermission.RESULT_CODE_READ_CALL_LOG:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case DuckPermission.RESULT_ACCESS_COARSE_LOCATION:
+            case DuckPermission.RESULT_CODE_WRITE_CALL_LOG:
+                if (DuckPermission.getInstance(this).result(grantResults)) {
+                    Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case DuckPermission.RESULT_CODE_PROCESS_OUTGOING_CALLS:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
@@ -37,17 +44,24 @@ public class LocationActivity extends AppCompatActivity {
         }
     }
 
-    public void onAccessFineLocationClick(View view) {
+    public void onReadCallLogClick(View view) {
         if (DuckPermission.getInstance(this)
-                .requestAccessFineLocation()) {
-            Toast.makeText(this, "Already granted access fine location permission", Toast.LENGTH_SHORT).show();
+                .requestReadCallLog()) {
+            Toast.makeText(this, "Already granted read call log permission", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void onAccessCoarseLocationClick(View view) {
+    public void onWriteCallLogClick(View view) {
         if (DuckPermission.getInstance(this)
-                .requestAccessCoarseLocation()) {
-            Toast.makeText(this, "Already granted access coarse location permission", Toast.LENGTH_SHORT).show();
+                .requestWriteCallLog()) {
+            Toast.makeText(this, "Already granted write call log permission", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void onProcessOutgoingCallsClick(View view) {
+        if (DuckPermission.getInstance(this)
+                .requestProcessOutgoingCalls()) {
+            Toast.makeText(this, "Already granted process outgoing calls permission", Toast.LENGTH_SHORT).show();
         }
     }
 }

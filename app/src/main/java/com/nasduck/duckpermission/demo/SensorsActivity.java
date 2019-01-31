@@ -1,4 +1,4 @@
-package com.nasduck.duckPermissionDemo;
+package com.nasduck.duckpermission.demo;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -8,19 +8,19 @@ import android.widget.Toast;
 
 import com.nasduck.duckpermission.DuckPermission;
 
-public class MicrophoneActivity extends AppCompatActivity {
+public class SensorsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_microphone);
+        setContentView(R.layout.activity_sensors);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case DuckPermission.RESULT_CODE_RECORD_AUDIO:
+            case DuckPermission.RESULT_CODE_BODY_SENSORS:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
@@ -30,10 +30,10 @@ public class MicrophoneActivity extends AppCompatActivity {
         }
     }
 
-    public void onAudioRecordClick(View view) {
+    public void onBodySensorsClick(View view) {
         if (DuckPermission.getInstance(this)
-                .requestAudioRecord()) {
-            Toast.makeText(this, "Already granted audio record permission", Toast.LENGTH_SHORT).show();
+                .requestBodySensors()) {
+            Toast.makeText(this, "Already granted body sensors permission", Toast.LENGTH_SHORT).show();
         }
     }
 }

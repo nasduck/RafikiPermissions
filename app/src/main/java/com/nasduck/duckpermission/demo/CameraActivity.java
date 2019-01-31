@@ -1,4 +1,4 @@
-package com.nasduck.duckPermissionDemo;
+package com.nasduck.duckpermission.demo;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -8,19 +8,19 @@ import android.widget.Toast;
 
 import com.nasduck.duckpermission.DuckPermission;
 
-public class SensorsActivity extends AppCompatActivity {
+public class CameraActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sensors);
+        setContentView(R.layout.activity_camera);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case DuckPermission.RESULT_CODE_BODY_SENSORS:
+            case DuckPermission.RESULT_CODE_CAMERA:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
@@ -30,10 +30,10 @@ public class SensorsActivity extends AppCompatActivity {
         }
     }
 
-    public void onBodySensorsClick(View view) {
+    public void onCameraClick(View view) {
         if (DuckPermission.getInstance(this)
-                .requestBodySensors()) {
-            Toast.makeText(this, "Already granted body sensors permission", Toast.LENGTH_SHORT).show();
+                .requestCamera()) {
+            Toast.makeText(this, "Already granted camera permission", Toast.LENGTH_SHORT).show();
         }
     }
 }
