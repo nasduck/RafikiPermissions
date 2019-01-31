@@ -3,6 +3,7 @@ package com.nasduck.duckpermission.result;
 import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.nasduck.duckpermission.SetPermissions;
 import com.nasduck.duckpermission.util.PermissionUtils;

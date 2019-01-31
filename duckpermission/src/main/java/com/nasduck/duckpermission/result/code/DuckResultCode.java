@@ -1,6 +1,6 @@
 package com.nasduck.duckpermission.result.code;
 
-public class PermissionCode {
+public class DuckResultCode {
 
     public final static int DUCK_PERMISSION_RESULT_CODE = 999;
 

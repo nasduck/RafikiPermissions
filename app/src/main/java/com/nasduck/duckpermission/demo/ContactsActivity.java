@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.nasduck.duckpermission.DuckPermission;
-import com.nasduck.duckpermission.result.code.PermissionCode;
+import com.nasduck.duckpermission.result.code.DuckResultCode;
 
 public class ContactsActivity extends AppCompatActivity {
 
@@ -21,22 +21,22 @@ public class ContactsActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case PermissionCode.RESULT_CODE_READ_CONTACTS:
-                if (DuckPermission.getInstance(this).result(grantResults)) {
+            case DuckResultCode.RESULT_CODE_READ_CONTACTS:
+                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case PermissionCode.RESULT_CODE_WRITE_CONTACTS:
-                if (DuckPermission.getInstance(this).result(grantResults)) {
+            case DuckResultCode.RESULT_CODE_WRITE_CONTACTS:
+                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case PermissionCode.RESULT_CODE_GET_ACCOUNTS:
-                if (DuckPermission.getInstance(this).result(grantResults)) {
+            case DuckResultCode.RESULT_CODE_GET_ACCOUNTS:
+                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();

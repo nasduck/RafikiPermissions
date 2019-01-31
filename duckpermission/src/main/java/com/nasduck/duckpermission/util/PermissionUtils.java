@@ -37,6 +37,8 @@ public class PermissionUtils {
     public static List<String> filterDeniedPermissions(String[] permissions, int[] grantResults) {
         List<String> deniedPermissions = new ArrayList<>();
 
+        if (permissions.length == 0) return deniedPermissions;
+
         for (int i = 0; i < grantResults.length; i++) {
             if(grantResults[i] == PackageManager.PERMISSION_DENIED) {
                 deniedPermissions.add(permissions[i]);

@@ -5,6 +5,7 @@
     <!-- Dangerous permissions and permission groups -->
     <!-- https://developer.android.google.cn/guide/topics/permissions/overview#permission-groups -->
 
+
     <!-- CALENDAR -->
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
@@ -48,8 +49,8 @@
     <uses-permission android:name="android.permission.RECEIVE_MMS" />
 
     <!-- STORAGE -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -58,23 +59,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.nasduck.duckpermission.demo.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.nasduck.duckpermission.demo.StorageActivity"/>
-        <activity android:name="com.nasduck.duckpermission.demo.SMSActivity" />
-        <activity android:name="com.nasduck.duckpermission.demo.SensorsActivity" />
-        <activity android:name="com.nasduck.duckpermission.demo.PhoneActivity" />
-        <activity android:name="com.nasduck.duckpermission.demo.MicrophoneActivity" />
-        <activity android:name="com.nasduck.duckpermission.demo.LocationActivity" />
-        <activity android:name="com.nasduck.duckpermission.demo.ContactsActivity" />
-        <activity android:name="com.nasduck.duckpermission.demo.CameraActivity" />
-        <activity android:name="com.nasduck.duckpermission.demo.CallLogActivity" />
-        <activity android:name="com.nasduck.duckpermission.demo.CalendarActivity" />
+        <activity android:name=".StorageActivity" />
+        <activity android:name=".SMSActivity" />
+        <activity android:name=".SensorsActivity" />
+        <activity android:name=".PhoneActivity" />
+        <activity android:name=".MicrophoneActivity" />
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".ContactsActivity" />
+        <activity android:name=".CameraActivity" />
+        <activity android:name=".CallLogActivity" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".StrategyActivity"></activity>
     </application>
 
 </manifest>

@@ -4,10 +4,11 @@ import android.Manifest;
 import android.app.Activity;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 
 import com.nasduck.duckpermission.result.IDuckPermissionResult;
 import com.nasduck.duckpermission.result.RequestPermissionsResultNothing;
-import com.nasduck.duckpermission.result.code.PermissionCode;
+import com.nasduck.duckpermission.result.code.DuckResultCode;
 import com.nasduck.duckpermission.util.PermissionUtils;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class DuckPermission {
 
     private DuckPermission(Activity activity) {
         this.mPermissionList = new ArrayList<>();
-        this.mResultCode = PermissionCode.DUCK_PERMISSION_RESULT_CODE;
+        this.mResultCode = DuckResultCode.DUCK_PERMISSION_RESULT_CODE;
         this.mActivity = activity;
         this.mOnResult = new RequestPermissionsResultNothing();
     }
@@ -38,10 +39,8 @@ public class DuckPermission {
         return DEFAULT;
     }
 
-    public boolean result(int[] grantResults) {
-        return this.mOnResult.onPermissionsResult(mActivity,
-                mPermissionList.toArray(new String[mPermissionList.size()]),
-                grantResults);
+    public boolean result(String[] permissions, int[] grantResults) {
+        return this.mOnResult.onPermissionsResult(mActivity, permissions, grantResults);
     }
 
     public boolean request() {
@@ -236,131 +235,131 @@ public class DuckPermission {
 
     public Boolean requestReadCalendar() {
         this.addReadCalendar();
-        return request(PermissionCode.RESULT_CODE_READ_CALENDAR);
+        return request(DuckResultCode.RESULT_CODE_READ_CALENDAR);
     }
 
     public Boolean requestWriteCalendar() {
         this.addWriteCalendar();
-        return request(PermissionCode.RESULT_CODE_WRITE_CALENDAR);
+        return request(DuckResultCode.RESULT_CODE_WRITE_CALENDAR);
     }
 
     public Boolean requestReadCallLog() {
         this.addReadCallLog();
-        return request(PermissionCode.RESULT_CODE_READ_CALL_LOG);
+        return request(DuckResultCode.RESULT_CODE_READ_CALL_LOG);
     }
 
     public Boolean requestWriteCallLog() {
         this.addWriteCallLog();
-        return request(PermissionCode.RESULT_CODE_WRITE_CALL_LOG);
+        return request(DuckResultCode.RESULT_CODE_WRITE_CALL_LOG);
     }
 
     public Boolean requestProcessOutgoingCalls() {
         this.addProcessOutgoingCalls();
-        return request(PermissionCode.RESULT_CODE_PROCESS_OUTGOING_CALLS);
+        return request(DuckResultCode.RESULT_CODE_PROCESS_OUTGOING_CALLS);
     }
 
     public Boolean requestCamera() {
         this.addCamera();
-        return request(PermissionCode.RESULT_CODE_CAMERA);
+        return request(DuckResultCode.RESULT_CODE_CAMERA);
     }
 
     public Boolean requestReadContacts() {
         this.addReadContacts();
-        return request(PermissionCode.RESULT_CODE_READ_CONTACTS);
+        return request(DuckResultCode.RESULT_CODE_READ_CONTACTS);
     }
 
     public Boolean requestWriteContacts() {
         this.addWriteContacts();
-        return request(PermissionCode.RESULT_CODE_WRITE_CONTACTS);
+        return request(DuckResultCode.RESULT_CODE_WRITE_CONTACTS);
     }
 
     public Boolean requestGetAccounts() {
         this.addGetAccounts();
-        return request(PermissionCode.RESULT_CODE_GET_ACCOUNTS);
+        return request(DuckResultCode.RESULT_CODE_GET_ACCOUNTS);
     }
 
     public Boolean requestAudioRecord() {
         this.addAudioRecord();
-        return request(PermissionCode.RESULT_CODE_RECORD_AUDIO);
+        return request(DuckResultCode.RESULT_CODE_RECORD_AUDIO);
     }
 
     public Boolean requestAccessFineLocation() {
         this.addAccessFineLocation();
-        return request(PermissionCode.RESULT_CODE_ACCESS_FINE_LOCATION);
+        return request(DuckResultCode.RESULT_CODE_ACCESS_FINE_LOCATION);
     }
 
     public Boolean requestAccessCoarseLocation() {
         this.addAccessCoarseLocation();
-        return request(PermissionCode.RESULT_ACCESS_COARSE_LOCATION);
+        return request(DuckResultCode.RESULT_ACCESS_COARSE_LOCATION);
     }
 
     public Boolean requestReadPhoneState() {
         this.addReadPhoneState();
-        return request(PermissionCode.RESULT_CODE_READ_PHONE_STATE);
+        return request(DuckResultCode.RESULT_CODE_READ_PHONE_STATE);
     }
 
     public Boolean requestReadPhoneNumbers() {
         this.addReadPhoneNumbers();
-        return request(PermissionCode.RESULT_CODE_READ_PHONE_NUMBERS);
+        return request(DuckResultCode.RESULT_CODE_READ_PHONE_NUMBERS);
     }
 
     public Boolean requestCallPhone() {
         this.addCallPhone();
-        return request(PermissionCode.RESULT_CODE_CALL_PHONE);
+        return request(DuckResultCode.RESULT_CODE_CALL_PHONE);
     }
 
     public Boolean requestAnswerPhoneCalls() {
         this.addAnswerPhoneCalls();
-        return request(PermissionCode.RESULT_CODE_ANSWER_PHONE_CALLS);
+        return request(DuckResultCode.RESULT_CODE_ANSWER_PHONE_CALLS);
     }
 
     public Boolean requestAddVoiceMail() {
         this.addAddVoiceMail();
-        return request(PermissionCode.RESULT_CODE_ADD_VOICE_MAIL);
+        return request(DuckResultCode.RESULT_CODE_ADD_VOICE_MAIL);
     }
 
     public Boolean requestUseSip() {
         this.addUseSip();
-        return request(PermissionCode.RESULT_CODE_USE_SIP);
+        return request(DuckResultCode.RESULT_CODE_USE_SIP);
     }
 
     public Boolean requestBodySensors() {
         this.addBodySensors();
-        return request(PermissionCode.RESULT_CODE_BODY_SENSORS);
+        return request(DuckResultCode.RESULT_CODE_BODY_SENSORS);
     }
 
     public Boolean requestSendSMS() {
         this.addSendSMS();
-        return request(PermissionCode.RESULT_CODE_SEND_SMS);
+        return request(DuckResultCode.RESULT_CODE_SEND_SMS);
     }
 
     public Boolean requestReceiveSMS() {
         this.addReceiveSMS();
-        return request(PermissionCode.RESULT_CODE_RECEIVE_SMS);
+        return request(DuckResultCode.RESULT_CODE_RECEIVE_SMS);
     }
 
     public Boolean requestReadSMS() {
         this.addReadSMS();
-        return request(PermissionCode.RESULT_CODE_READ_SMS);
+        return request(DuckResultCode.RESULT_CODE_READ_SMS);
     }
 
     public Boolean requestReceiveWapPush() {
         this.addReceiveWapPush();
-        return request(PermissionCode.RESULT_CODE_RECEIVE_WAP_PUSH);
+        return request(DuckResultCode.RESULT_CODE_RECEIVE_WAP_PUSH);
     }
 
     public Boolean requestReceiveMMS() {
         this.addReceiveMMS();
-        return request(PermissionCode.RESULT_CODE_RECEIVE_MMS);
+        return request(DuckResultCode.RESULT_CODE_RECEIVE_MMS);
     }
 
     public Boolean requestReadExternalStorage() {
         this.addReadExternalStorage();
-        return request(PermissionCode.RESULT_CODE_READ_EXTERNAL_STORAGE);
+        return request(DuckResultCode.RESULT_CODE_READ_EXTERNAL_STORAGE);
     }
 
     public Boolean requestWriteExternalStorage() {
         this.addWriteExternalStorage();
-        return request(PermissionCode.RESULT_CODE_WRITE_EXTERNAL_STORAGE);
+        return request(DuckResultCode.RESULT_CODE_WRITE_EXTERNAL_STORAGE);
     }
 }
