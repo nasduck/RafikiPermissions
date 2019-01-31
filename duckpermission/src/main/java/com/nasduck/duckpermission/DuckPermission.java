@@ -7,50 +7,13 @@ import android.support.v4.app.ActivityCompat;
 
 import com.nasduck.duckpermission.result.IDuckPermissionResult;
 import com.nasduck.duckpermission.result.RequestPermissionsResultNothing;
+import com.nasduck.duckpermission.result.code.PermissionCode;
 import com.nasduck.duckpermission.util.PermissionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DuckPermission {
-
-    public final static int DUCK_PERMISSION_RESULT_CODE = 999;
-    // CALENDAR
-    public final static int RESULT_CODE_READ_CALENDAR = 998;
-    public final static int RESULT_CODE_WRITE_CALENDAR = 997;
-    // CALL_LOG
-    public final static int RESULT_CODE_READ_CALL_LOG = 996;
-    public final static int RESULT_CODE_WRITE_CALL_LOG = 995;
-    public final static int RESULT_CODE_PROCESS_OUTGOING_CALLS = 994;
-    // CAMERA
-    public final static int RESULT_CODE_CAMERA = 993;
-    // CONTACTS
-    public final static int RESULT_CODE_READ_CONTACTS = 992;
-    public final static int RESULT_CODE_WRITE_CONTACTS = 991;
-    public final static int RESULT_CODE_GET_ACCOUNTS = 990;
-    // LOCATION
-    public final static int RESULT_CODE_ACCESS_FINE_LOCATION = 989;
-    public final static int RESULT_ACCESS_COARSE_LOCATION = 988;
-    // MICROPHONE
-    public final static int RESULT_CODE_RECORD_AUDIO = 987;
-    // PHONE
-    public final static int RESULT_CODE_READ_PHONE_STATE= 986;
-    public final static int RESULT_CODE_READ_PHONE_NUMBERS= 985;
-    public final static int RESULT_CODE_CALL_PHONE= 984;
-    public final static int RESULT_CODE_ANSWER_PHONE_CALLS= 983;
-    public final static int RESULT_CODE_ADD_VOICE_MAIL = 982;
-    public final static int RESULT_CODE_USE_SIP= 981;
-    // SENSORS
-    public final static int RESULT_CODE_BODY_SENSORS = 980;
-    // SMS
-    public final static int RESULT_CODE_SEND_SMS = 979;
-    public final static int RESULT_CODE_RECEIVE_SMS = 978;
-    public final static int RESULT_CODE_READ_SMS = 977;
-    public final static int RESULT_CODE_RECEIVE_WAP_PUSH = 976;
-    public final static int RESULT_CODE_RECEIVE_MMS = 975;
-    // STORAGE
-    public final static int RESULT_CODE_READ_EXTERNAL_STORAGE = 974;
-    public final static int RESULT_CODE_WRITE_EXTERNAL_STORAGE = 973;
 
     private static DuckPermission DEFAULT;
 
@@ -62,7 +25,7 @@ public class DuckPermission {
 
     private DuckPermission(Activity activity) {
         this.mPermissionList = new ArrayList<>();
-        this.mResultCode = DUCK_PERMISSION_RESULT_CODE;
+        this.mResultCode = PermissionCode.DUCK_PERMISSION_RESULT_CODE;
         this.mActivity = activity;
         this.mOnResult = new RequestPermissionsResultNothing();
     }
@@ -273,131 +236,131 @@ public class DuckPermission {
 
     public Boolean requestReadCalendar() {
         this.addReadCalendar();
-        return request(RESULT_CODE_READ_CALENDAR);
+        return request(PermissionCode.RESULT_CODE_READ_CALENDAR);
     }
 
     public Boolean requestWriteCalendar() {
         this.addWriteCalendar();
-        return request(RESULT_CODE_WRITE_CALENDAR);
+        return request(PermissionCode.RESULT_CODE_WRITE_CALENDAR);
     }
 
     public Boolean requestReadCallLog() {
         this.addReadCallLog();
-        return request(RESULT_CODE_READ_CALL_LOG);
+        return request(PermissionCode.RESULT_CODE_READ_CALL_LOG);
     }
 
     public Boolean requestWriteCallLog() {
         this.addWriteCallLog();
-        return request(RESULT_CODE_WRITE_CALL_LOG);
+        return request(PermissionCode.RESULT_CODE_WRITE_CALL_LOG);
     }
 
     public Boolean requestProcessOutgoingCalls() {
         this.addProcessOutgoingCalls();
-        return request(RESULT_CODE_PROCESS_OUTGOING_CALLS);
+        return request(PermissionCode.RESULT_CODE_PROCESS_OUTGOING_CALLS);
     }
 
     public Boolean requestCamera() {
         this.addCamera();
-        return request(RESULT_CODE_CAMERA);
+        return request(PermissionCode.RESULT_CODE_CAMERA);
     }
 
     public Boolean requestReadContacts() {
         this.addReadContacts();
-        return request(RESULT_CODE_READ_CONTACTS);
+        return request(PermissionCode.RESULT_CODE_READ_CONTACTS);
     }
 
     public Boolean requestWriteContacts() {
         this.addWriteContacts();
-        return request(RESULT_CODE_WRITE_CONTACTS);
+        return request(PermissionCode.RESULT_CODE_WRITE_CONTACTS);
     }
 
     public Boolean requestGetAccounts() {
         this.addGetAccounts();
-        return request(RESULT_CODE_GET_ACCOUNTS);
+        return request(PermissionCode.RESULT_CODE_GET_ACCOUNTS);
     }
 
     public Boolean requestAudioRecord() {
         this.addAudioRecord();
-        return request(RESULT_CODE_RECORD_AUDIO);
+        return request(PermissionCode.RESULT_CODE_RECORD_AUDIO);
     }
 
     public Boolean requestAccessFineLocation() {
         this.addAccessFineLocation();
-        return request(RESULT_CODE_ACCESS_FINE_LOCATION);
+        return request(PermissionCode.RESULT_CODE_ACCESS_FINE_LOCATION);
     }
 
     public Boolean requestAccessCoarseLocation() {
         this.addAccessCoarseLocation();
-        return request(RESULT_ACCESS_COARSE_LOCATION);
+        return request(PermissionCode.RESULT_ACCESS_COARSE_LOCATION);
     }
 
     public Boolean requestReadPhoneState() {
         this.addReadPhoneState();
-        return request(RESULT_CODE_READ_PHONE_STATE);
+        return request(PermissionCode.RESULT_CODE_READ_PHONE_STATE);
     }
 
     public Boolean requestReadPhoneNumbers() {
         this.addReadPhoneNumbers();
-        return request(RESULT_CODE_READ_PHONE_NUMBERS);
+        return request(PermissionCode.RESULT_CODE_READ_PHONE_NUMBERS);
     }
 
     public Boolean requestCallPhone() {
         this.addCallPhone();
-        return request(RESULT_CODE_CALL_PHONE);
+        return request(PermissionCode.RESULT_CODE_CALL_PHONE);
     }
 
     public Boolean requestAnswerPhoneCalls() {
         this.addAnswerPhoneCalls();
-        return request(RESULT_CODE_ANSWER_PHONE_CALLS);
+        return request(PermissionCode.RESULT_CODE_ANSWER_PHONE_CALLS);
     }
 
     public Boolean requestAddVoiceMail() {
         this.addAddVoiceMail();
-        return request(RESULT_CODE_ADD_VOICE_MAIL);
+        return request(PermissionCode.RESULT_CODE_ADD_VOICE_MAIL);
     }
 
     public Boolean requestUseSip() {
         this.addUseSip();
-        return request(RESULT_CODE_USE_SIP);
+        return request(PermissionCode.RESULT_CODE_USE_SIP);
     }
 
     public Boolean requestBodySensors() {
         this.addBodySensors();
-        return request(RESULT_CODE_BODY_SENSORS);
+        return request(PermissionCode.RESULT_CODE_BODY_SENSORS);
     }
 
     public Boolean requestSendSMS() {
         this.addSendSMS();
-        return request(RESULT_CODE_SEND_SMS);
+        return request(PermissionCode.RESULT_CODE_SEND_SMS);
     }
 
     public Boolean requestReceiveSMS() {
         this.addReceiveSMS();
-        return request(RESULT_CODE_RECEIVE_SMS);
+        return request(PermissionCode.RESULT_CODE_RECEIVE_SMS);
     }
 
     public Boolean requestReadSMS() {
         this.addReadSMS();
-        return request(RESULT_CODE_READ_SMS);
+        return request(PermissionCode.RESULT_CODE_READ_SMS);
     }
 
     public Boolean requestReceiveWapPush() {
         this.addReceiveWapPush();
-        return request(RESULT_CODE_RECEIVE_WAP_PUSH);
+        return request(PermissionCode.RESULT_CODE_RECEIVE_WAP_PUSH);
     }
 
     public Boolean requestReceiveMMS() {
         this.addReceiveMMS();
-        return request(RESULT_CODE_RECEIVE_MMS);
+        return request(PermissionCode.RESULT_CODE_RECEIVE_MMS);
     }
 
     public Boolean requestReadExternalStorage() {
         this.addReadExternalStorage();
-        return request(RESULT_CODE_READ_EXTERNAL_STORAGE);
+        return request(PermissionCode.RESULT_CODE_READ_EXTERNAL_STORAGE);
     }
 
     public Boolean requestWriteExternalStorage() {
         this.addWriteExternalStorage();
-        return request(RESULT_CODE_WRITE_EXTERNAL_STORAGE);
+        return request(PermissionCode.RESULT_CODE_WRITE_EXTERNAL_STORAGE);
     }
 }

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.result.code.PermissionCode;
 
 public class PhoneActivity extends AppCompatActivity {
 
@@ -20,42 +21,42 @@ public class PhoneActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case DuckPermission.RESULT_CODE_READ_PHONE_STATE:
+            case PermissionCode.RESULT_CODE_READ_PHONE_STATE:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case DuckPermission.RESULT_CODE_READ_PHONE_NUMBERS:
+            case PermissionCode.RESULT_CODE_READ_PHONE_NUMBERS:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case DuckPermission.RESULT_CODE_CALL_PHONE:
+            case PermissionCode.RESULT_CODE_CALL_PHONE:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case DuckPermission.RESULT_CODE_ANSWER_PHONE_CALLS:
+            case PermissionCode.RESULT_CODE_ANSWER_PHONE_CALLS:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case DuckPermission.RESULT_CODE_ADD_VOICE_MAIL:
+            case PermissionCode.RESULT_CODE_ADD_VOICE_MAIL:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case DuckPermission.RESULT_CODE_USE_SIP:
+            case PermissionCode.RESULT_CODE_USE_SIP:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {

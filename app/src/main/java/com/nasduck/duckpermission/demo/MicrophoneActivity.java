@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.result.code.PermissionCode;
 
 public class MicrophoneActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class MicrophoneActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case DuckPermission.RESULT_CODE_RECORD_AUDIO:
+            case PermissionCode.RESULT_CODE_RECORD_AUDIO:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {

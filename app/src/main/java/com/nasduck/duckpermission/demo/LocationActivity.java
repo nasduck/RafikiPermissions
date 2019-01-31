@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.result.code.PermissionCode;
 
 public class LocationActivity extends AppCompatActivity {
 
@@ -20,14 +21,14 @@ public class LocationActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case DuckPermission.RESULT_CODE_ACCESS_FINE_LOCATION:
+            case PermissionCode.RESULT_CODE_ACCESS_FINE_LOCATION:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case DuckPermission.RESULT_ACCESS_COARSE_LOCATION:
+            case PermissionCode.RESULT_ACCESS_COARSE_LOCATION:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.result.code.PermissionCode;
 
 public class CallLogActivity extends AppCompatActivity {
 
@@ -20,21 +21,21 @@ public class CallLogActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case DuckPermission.RESULT_CODE_READ_CALL_LOG:
+            case PermissionCode.RESULT_CODE_READ_CALL_LOG:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case DuckPermission.RESULT_CODE_WRITE_CALL_LOG:
+            case PermissionCode.RESULT_CODE_WRITE_CALL_LOG:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case DuckPermission.RESULT_CODE_PROCESS_OUTGOING_CALLS:
+            case PermissionCode.RESULT_CODE_PROCESS_OUTGOING_CALLS:
                 if (DuckPermission.getInstance(this).result(grantResults)) {
                     Toast.makeText(this, "Granted", Toast.LENGTH_SHORT).show();
                 } else {
