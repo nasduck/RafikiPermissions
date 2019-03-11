@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.content.ContextCompat;
 
+import com.nasduck.duckpermission.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,68 +50,66 @@ public class PermissionUtils {
         return deniedPermissions;
     }
 
-    private static PermissionUtils permissionUtils;
-    public static PermissionUtils getInstance(){
-        if(permissionUtils == null){
-            permissionUtils = new PermissionUtils();
-        }
-        return permissionUtils;
+    public static HashMap<String,String> getPermissionsMap(Context context) {
+
+        HashMap<String, String> map = new HashMap<>();
+
+        // Calendar
+        map.put("android.permission.READ_CALENDAR", "--" + context.getString(R.string.calendar));
+        map.put("android.permission.WRITE_CALENDAR", "--" + context.getString(R.string.calendar));
+
+        // Call log
+        map.put("android.permission.READ_CALL_LOG", "--" + context.getString(R.string.call_log));
+        map.put("android.permission.WRITE_CALL_LOG", "--" + context.getString(R.string.call_log));
+
+        // Camera
+        map.put("android.permission.CAMERA",  "--" + context.getString(R.string.camera));
+
+        // Contacts
+        map.put("android.permission.WRITE_CONTACTS", "--" + context.getString(R.string.contacts));
+        map.put("android.permission.GET_ACCOUNTS", "--" + context.getString(R.string.contacts));
+        map.put("android.pxwermission.READ_CONTACTS", "--" + context.getString(R.string.contacts));
+
+        // Location
+        map.put("android.permission.ACCESS_FINE_LOCATION", "--" + context.getString(R.string.location));
+        map.put("android.permission.ACCESS_COARSE_LOCATION", "--" + context.getString(R.string.location));
+
+        // Sensors
+        map.put("android.permission.BODY_SENSORS",  "--" + context.getString(R.string.sensors));
+
+        // SMS
+        map.put("android.permission.SEND_SMS", "--" + context.getString(R.string.sms));
+        map.put("android.permission.RECEIVE_SMS", "--" + context.getString(R.string.sms));
+        map.put("android.permission.READ_SMS", "--" + context.getString(R.string.sms));
+        map.put("android.permission.RECEIVE_WAP_PUSH", "--" + context.getString(R.string.sms));
+        map.put("android.permission.RECEIVE_MMS", "--" + context.getString(R.string.sms));
+
+        // Microphone
+        map.put("android.permission.RECORD_AUDIO", "--" + context.getString(R.string.microphone));
+
+        // Phone
+        map.put("android.permission.READ_PHONE_STATE", "--" + context.getString(R.string.phone));
+        map.put("android.permission.READ_PHONE_NUMBERS", "--" + context.getString(R.string.phone));
+        map.put("android.permission.CALL_PHONE", "--" + context.getString(R.string.phone));
+        map.put("android.permission.ANSWER_PHONE_CALLS", "--" + context.getString(R.string.phone));
+        map.put("android.permission.ADD_VOICE_MAIL", "--" + context.getString(R.string.phone));
+        map.put("android.permission.USE_SIP", "--" + context.getString(R.string.phone));
+
+        // Storage
+        map.put("android.permission.READ_EXTERNAL_STORAGE", "--" + context.getString(R.string.storage));
+        map.put("android.permission.WRITE_EXTERNAL_STORAGE", "--" + context.getString(R.string.storage));
+
+        return map;
     }
 
-    private HashMap<String,String> permissions;
-    public HashMap<String,String> getPermissions() {
-        if(permissions == null){
-            permissions = new HashMap<>();
-            initPermissions();
-        }
-        return permissions;
-    }
-
-    private void initPermissions(){
-        //联系人/通讯录权限
-        permissions.put("android.permission.WRITE_CONTACTS","--通讯录/联系人");
-        permissions.put("android.permission.GET_ACCOUNTS","--通讯录/联系人");
-        permissions.put("android.permission.READ_CONTACTS","--通讯录/联系人");
-        //电话权限
-        permissions.put("android.permission.READ_CALL_LOG","--电话");
-        permissions.put("android.permission.READ_PHONE_STATE","--电话");
-        permissions.put("android.permission.CALL_PHONE","--电话");
-        permissions.put("android.permission.WRITE_CALL_LOG","--电话");
-        permissions.put("android.permission.USE_SIP","--电话");
-        permissions.put("android.permission.PROCESS_OUTGOING_CALLS","--电话");
-        permissions.put("com.android.voicemail.permission.ADD_VOICEMAIL","--电话");
-        //日历权限
-        permissions.put("android.permission.READ_CALENDAR","--日历");
-        permissions.put("android.permission.WRITE_CALENDAR","--日历");
-        //相机拍照权限
-        permissions.put("android.permission.CAMERA","--相机/拍照");
-        //传感器权限
-        permissions.put("android.permission.BODY_SENSORS","--传感器");
-        //定位权限
-        permissions.put("android.permission.ACCESS_FINE_LOCATION","--定位");
-        permissions.put("android.permission.ACCESS_COARSE_LOCATION","--定位");
-        //文件存取
-        permissions.put("android.permission.READ_EXTERNAL_STORAGE","--文件存储");
-        permissions.put("android.permission.WRITE_EXTERNAL_STORAGE","--文件存储");
-        //音视频、录音权限
-        permissions.put("android.permission.RECORD_AUDIO","--音视频/录音");
-        //短信权限
-        permissions.put("android.permission.READ_SMS","--短信");
-        permissions.put("android.permission.RECEIVE_WAP_PUSH","--短信");
-        permissions.put("android.permission.RECEIVE_MMS","--短信");
-        permissions.put("android.permission.RECEIVE_SMS","--短信");
-        permissions.put("android.permission.SEND_SMS","--短信");
-        permissions.put("android.permission.READ_CELL_BROADCASTS","--短信");
-    }
-
-    public String getPermissionNames(List<String> permission) {
+    public static String translatePermissions(Context context, List<String> permission) {
         if(permission==null || permission.size()==0){
             return "\n";
         }
         StringBuilder sb = new StringBuilder();
         List<String> list = new ArrayList<>();
 
-        HashMap<String, String> permissions = getPermissions();
+        HashMap<String, String> permissions = getPermissionsMap(context);
 
         for(int i=0; i<permission.size(); i++){
             String name = permissions.get(permission.get(i));

@@ -1,6 +1,6 @@
 package com.nasduck.duckpermission.result;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 
@@ -10,7 +10,7 @@ import android.support.annotation.NonNull;
 public class RequestPermissionsResultNothing implements IDuckPermissionResult {
 
     @Override
-    public boolean onPermissionsResult(Activity activity, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public boolean onPermissionsResult(Context context, @NonNull String[] permissions, @NonNull int[] grantResults) {
         for (int grant : grantResults) {
             if (grant == PackageManager.PERMISSION_DENIED) {
                 // do nothing if permission denied
