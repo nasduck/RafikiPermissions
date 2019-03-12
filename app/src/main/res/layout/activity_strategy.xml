@@ -25,4 +25,13 @@
         android:textAlignment="center"
         android:textSize="16sp" />
 
+    <!-- Strategy custom -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onStrategyCustomClick"
+        android:text="@string/strategy_custom"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
 </LinearLayout>

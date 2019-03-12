@@ -14,7 +14,7 @@ public class PermissionResultCustomStrategy implements IPermissionResultStrategy
 
     private PermissionResultCustomStrategyListener mListener;
 
-    interface PermissionResultCustomStrategyListener {
+    public interface PermissionResultCustomStrategyListener {
         void onPermissionsResultGrant();
         void onPermissionsResultDenied();
     }
@@ -37,7 +37,7 @@ public class PermissionResultCustomStrategy implements IPermissionResultStrategy
         }
     }
 
-    public void setmListener(PermissionResultCustomStrategyListener mListener) {
+    public void setListener(PermissionResultCustomStrategyListener mListener) {
         this.mListener = mListener;
     }
 }

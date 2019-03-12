@@ -4,15 +4,16 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.nasduck.duckpermission.DuckPermission;
 import com.nasduck.duckpermission.demo.utils.ToastUtils;
+import com.nasduck.duckpermission.result.strategy.PermissionResultCustomStrategy;
 import com.nasduck.duckpermission.result.strategy.PermissionResultGuideStrategy;
 import com.nasduck.duckpermission.result.strategy.PermissionResultNothingStrategy;
 import com.nasduck.duckpermission.result.code.DuckResultCode;
 
-public class StrategyActivity extends AppCompatActivity {
+public class StrategyActivity extends AppCompatActivity implements
+        PermissionResultCustomStrategy.PermissionResultCustomStrategyListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class StrategyActivity extends AppCompatActivity {
         if (DuckPermission.getInstance(this)
                 .setRequestResult(new PermissionResultNothingStrategy())
                 .requestCamera()) {
-            Toast.makeText(this, "Already granted camera permission", Toast.LENGTH_SHORT).show();
+            ToastUtils.showToast(this, "Already granted camera permission");
         }
     }
 
@@ -45,7 +46,30 @@ public class StrategyActivity extends AppCompatActivity {
         if (DuckPermission.getInstance(this)
                 .setRequestResult(new PermissionResultGuideStrategy())
                 .requestCamera()) {
-            Toast.makeText(this, "Already granted camera permission", Toast.LENGTH_SHORT).show();
+            ToastUtils.showToast(this, "Already granted camera permission");
         }
+    }
+
+    public void onStrategyCustomClick(View view) {
+        PermissionResultCustomStrategy strategy = new PermissionResultCustomStrategy();
+        strategy.setListener(this);
+
+        if (DuckPermission.getInstance(this)
+                .setRequestResult(strategy)
+                .requestCamera()) {
+            ToastUtils.showToast(this, "Already granted camera permission");
+        }
+    }
+
+    //* Custom Strategy **************************************************************************//
+
+    @Override
+    public void onPermissionsResultGrant() {
+        ToastUtils.showToast(this, "Oh Yeah! Permissions Grant!!");
+    }
+
+    @Override
+    public void onPermissionsResultDenied() {
+        ToastUtils.showToast(this, "Nooooo! Permissions Denied!");
     }
 }
