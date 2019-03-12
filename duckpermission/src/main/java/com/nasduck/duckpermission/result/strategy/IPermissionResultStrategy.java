@@ -1,10 +1,12 @@
-package com.nasduck.duckpermission.result;
+package com.nasduck.duckpermission.result.strategy;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-public interface IDuckPermissionResult {
+/**
+ * All the permission result strategies should implement this interface.
+ */
+public interface IPermissionResultStrategy {
 
     /**
      *

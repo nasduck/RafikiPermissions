@@ -2,12 +2,14 @@ package com.nasduck.duckpermission;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
-import android.util.Log;
+import android.support.v4.util.Preconditions;
 
-import com.nasduck.duckpermission.result.IDuckPermissionResult;
-import com.nasduck.duckpermission.result.RequestPermissionsResultNothing;
+import com.nasduck.duckpermission.result.strategy.IPermissionResultStrategy;
+import com.nasduck.duckpermission.result.strategy.PermissionResultNothingStrategy;
 import com.nasduck.duckpermission.result.code.DuckResultCode;
 import com.nasduck.duckpermission.util.PermissionUtils;
 
@@ -20,15 +22,15 @@ public class DuckPermission {
 
     private List<String> mPermissionList;
     private int mResultCode;
-    private Activity mActivity;
+    private Context mContext;
 
-    private IDuckPermissionResult mOnResult;
+    private IPermissionResultStrategy mOnResult;
 
-    private DuckPermission(Activity activity) {
+    private DuckPermission(Context context) {
         this.mPermissionList = new ArrayList<>();
         this.mResultCode = DuckResultCode.DUCK_PERMISSION_RESULT_CODE;
-        this.mActivity = activity;
-        this.mOnResult = new RequestPermissionsResultNothing();
+        this.mContext = context;
+        this.mOnResult = new PermissionResultNothingStrategy();
     }
 
     public static DuckPermission getInstance(Activity activity) {
@@ -40,7 +42,7 @@ public class DuckPermission {
     }
 
     public boolean result(String[] permissions, int[] grantResults) {
-        return this.mOnResult.onPermissionsResult(mActivity, permissions, grantResults);
+        return mOnResult.onPermissionsResult(mContext, permissions, grantResults);
     }
 
     public boolean request() {
@@ -55,7 +57,7 @@ public class DuckPermission {
 
         // Filter Permissions not granted yet
         List<String> deniedPermissions =
-                PermissionUtils.filterDeniedPermissions(mActivity, mPermissionList);
+                PermissionUtils.filterDeniedPermissions(mContext, mPermissionList);
 
         if(deniedPermissions.size() == 0) {
             return true;
@@ -63,7 +65,13 @@ public class DuckPermission {
 
         // Request Permissions
         String[] deniedPermissionArray = deniedPermissions.toArray(new String[deniedPermissions.size()]);
-        ActivityCompat.requestPermissions(mActivity, deniedPermissionArray, resultCode);
+
+        Activity activity = findActivity(mContext);
+        if (activity != null) {
+            ActivityCompat.requestPermissions(activity, deniedPermissionArray, resultCode);
+        } else {
+            throw new NullPointerException("No activity is found in the context passed in");
+        }
 
         return false;
     }
@@ -84,9 +92,23 @@ public class DuckPermission {
         return this;
     }
 
-    public DuckPermission setRequestResult(IDuckPermissionResult onResult) {
+    public DuckPermission setRequestResult(IPermissionResultStrategy onResult) {
         this.mOnResult = onResult;
         return this;
+    }
+
+    //* Private **********************************************************************************//
+
+    public static Activity findActivity(Context context) {
+        if (context instanceof Activity) {
+            return (Activity) context;
+        }
+        if (context instanceof ContextWrapper) {
+            ContextWrapper wrapper = (ContextWrapper) context;
+            return findActivity(wrapper.getBaseContext());
+        } else {
+            return null;
+        }
     }
 
     //* Permissions ******************************************************************************//

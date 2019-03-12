@@ -1,4 +1,4 @@
-package com.nasduck.duckpermission.result;
+package com.nasduck.duckpermission.result.strategy;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Guide users to grant permissions again if not granted
  */
-public class RequestPermissionsResultGuide implements IDuckPermissionResult {
+public class PermissionResultGuideStrategy implements IPermissionResultStrategy {
 
     @Override
     public boolean onPermissionsResult(Context context, @NonNull String[] permissions, @NonNull int[] grantResults) {
