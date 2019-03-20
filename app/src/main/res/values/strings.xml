@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">DuckPermission</string>
+    <string name="app_name">DuckPermissionDemo</string>
+
+    <string name="different_strategy">Different Permission Strategy</string>
+    <string name="strategy_nothing">Do Nothing Strategy(Default)</string>
+    <string name="strategy_guide">Guidem Strategy</string>
+    <string name="strategy_custom">Custom Strategy</string>
 
     <string name="group_calendar">Group Calendar</string>
     <string name="group_call_log">Group Call Log</string>

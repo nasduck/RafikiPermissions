@@ -7,6 +7,15 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!-- Different Strategy -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onStrategyClick"
+        android:text="@string/different_strategy"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"

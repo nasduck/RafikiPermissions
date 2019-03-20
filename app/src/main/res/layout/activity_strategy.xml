@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".StrategyActivity">
+
+    <!-- Strategy do nothing -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onStrategyDoNothingClick"
+        android:text="@string/strategy_nothing"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <!-- Strategy guide -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onStrategyGuideClick"
+        android:text="@string/strategy_guide"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <!-- Strategy custom -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onStrategyCustomClick"
+        android:text="@string/strategy_custom"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+</LinearLayout>
