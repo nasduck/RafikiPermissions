@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.util.Preconditions;
 
 import com.nasduck.duckpermission.result.strategy.IPermissionResultStrategy;
@@ -42,7 +43,16 @@ public class DuckPermission {
     }
 
     public boolean result(String[] permissions, int[] grantResults) {
-        return mOnResult.onPermissionsResult(mContext, permissions, grantResults);
+        List<String> deniedPermissions = PermissionUtils.filterDeniedPermissions(permissions, grantResults);
+        if (deniedPermissions.size() == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void result(int requestCode, String[] permissions, int[] grantResults) {
+        mOnResult.onPermissionsResult(mContext, requestCode, permissions, grantResults);
     }
 
     public boolean request() {
@@ -99,7 +109,7 @@ public class DuckPermission {
 
     //* Private **********************************************************************************//
 
-    public static Activity findActivity(Context context) {
+    private static Activity findActivity(Context context) {
         if (context instanceof Activity) {
             return (Activity) context;
         }

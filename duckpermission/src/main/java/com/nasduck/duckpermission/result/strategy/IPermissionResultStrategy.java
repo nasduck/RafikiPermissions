@@ -16,6 +16,6 @@ public interface IPermissionResultStrategy {
      * @param grantResults
      * @return True if all permissions are granted
      */
-    boolean onPermissionsResult(Context context, @NonNull String[] permissions, @NonNull int[] grantResults);
+    void onPermissionsResult(Context context, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults);
 
 }

@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 
 import com.nasduck.duckpermission.R;
 import com.nasduck.duckpermission.util.PermissionUtils;
@@ -18,17 +19,24 @@ import java.util.List;
  */
 public class PermissionResultGuideStrategy implements IPermissionResultStrategy {
 
+    private PermissionResultCustomStrategyListener mListener;
+
+    public PermissionResultGuideStrategy(PermissionResultCustomStrategyListener mListener) {
+        this.mListener = mListener;
+    }
+
     @Override
-    public boolean onPermissionsResult(Context context, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onPermissionsResult(Context context, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
         List<String> deniedPermissions = PermissionUtils.filterDeniedPermissions(permissions, grantResults);
 
         if (deniedPermissions.size() == 0) {
-            return true;
+            if (mListener != null) {
+                mListener.onPermissionsResultGrant(requestCode);
+            }
         } else {
             String name = PermissionUtils.translatePermissions(context, deniedPermissions);
-            showGuideDialog(context, name);
-            return false;
+            showGuideDialog(context, requestCode, name);
         }
     }
 
@@ -38,7 +46,7 @@ public class PermissionResultGuideStrategy implements IPermissionResultStrategy 
      * @param context
      * @param permissions
      */
-    public void showGuideDialog(final Context context, String permissions) {
+    private void showGuideDialog(final Context context, final int requestCode, String permissions) {
         StringBuilder sb = new StringBuilder();
         sb.append(context.getString(R.string.guide_title) + "\n\n");
         sb.append(permissions);
@@ -58,7 +66,14 @@ public class PermissionResultGuideStrategy implements IPermissionResultStrategy 
                 context.startActivity(i);
             }
         });
-        builder.setNegativeButton(context.getString(R.string.cancel), null);
+        builder.setNegativeButton(context.getString(R.string.cancel), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (mListener != null) {
+                    mListener.onPermissionsResultDenied(requestCode);
+                }
+            }
+        });
         builder.show();
     }
 }
