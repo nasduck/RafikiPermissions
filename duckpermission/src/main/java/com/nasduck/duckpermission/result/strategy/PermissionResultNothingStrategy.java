@@ -10,14 +10,12 @@ import android.support.annotation.NonNull;
 public class PermissionResultNothingStrategy implements IPermissionResultStrategy {
 
     @Override
-    public boolean onPermissionsResult(Context context, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onPermissionsResult(Context context, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         for (int grant : grantResults) {
             if (grant == PackageManager.PERMISSION_DENIED) {
                 // do nothing if permission denied
-                return false;
+
             }
         }
-
-        return true;
     }
 }

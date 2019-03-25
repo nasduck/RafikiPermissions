@@ -1,7 +1,9 @@
 package com.nasduck.duckpermission.result.strategy;
 
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 
 import com.nasduck.duckpermission.util.PermissionUtils;
 
@@ -14,30 +16,21 @@ public class PermissionResultCustomStrategy implements IPermissionResultStrategy
 
     private PermissionResultCustomStrategyListener mListener;
 
-    public interface PermissionResultCustomStrategyListener {
-        void onPermissionsResultGrant();
-        void onPermissionsResultDenied();
+    public PermissionResultCustomStrategy(PermissionResultCustomStrategyListener mListener) {
+        this.mListener = mListener;
     }
 
     @Override
-    public boolean onPermissionsResult(Context context, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onPermissionsResult(Context context, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         List<String> deniedPermissions = PermissionUtils.filterDeniedPermissions(permissions, grantResults);
-
         if (deniedPermissions.size() == 0) {
             if (mListener != null) {
-                mListener.onPermissionsResultGrant();
+                mListener.onPermissionsResultGrant(requestCode);
             }
-            return true;
         } else {
-            String name = PermissionUtils.translatePermissions(context, deniedPermissions);
             if (mListener != null) {
-                mListener.onPermissionsResultDenied();
+                mListener.onPermissionsResultDenied(requestCode);
             }
-            return false;
         }
-    }
-
-    public void setListener(PermissionResultCustomStrategyListener mListener) {
-        this.mListener = mListener;
     }
 }
