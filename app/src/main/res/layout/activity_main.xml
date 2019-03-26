@@ -7,6 +7,23 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/tv_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:text="@string/app_name"/>
+
+    </android.support.v7.widget.Toolbar>
+
     <!-- Different Strategy -->
     <Button
         android:layout_width="match_parent"
@@ -21,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:onClick="onPermissionListClick"
-        android:text="@string/different_strategy"
+        android:text="@string/permission_list"
         android:textAlignment="center"
         android:textSize="16sp" />
 

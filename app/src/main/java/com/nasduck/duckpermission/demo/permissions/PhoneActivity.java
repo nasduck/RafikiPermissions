@@ -1,6 +1,7 @@
 package com.nasduck.duckpermission.demo.permissions;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
@@ -15,10 +16,22 @@ import com.nasduck.duckpermission.result.strategy.impl.PermissionResultCustomStr
 public class PhoneActivity extends BaseActivity implements
         OnPermissionResultListener {
 
+    private Toolbar mToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone);
+
+        mToolbar = findViewById(R.id.toolbar);
+        mToolbar.setTitle("");
+        setSupportActionBar(mToolbar);
+        findViewById(R.id.tv_setting).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onAppSettingClick();
+            }
+        });
     }
 
     public void onReadPhoneStateClick(View view) {

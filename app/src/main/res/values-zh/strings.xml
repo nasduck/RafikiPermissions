@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">DuckPermissionDemo</string>
+
+    <string name="app_name">Rafiki Permissions</string>
 
     <string name="different_strategy">不同的权限策略</string>
     <string name="permission_list">权限列表</string>
     <string name="strategy_nothing">(默认) 无策略</string>
     <string name="strategy_guide">引导策略</string>
     <string name="strategy_custom">自定义策略</string>
+    <string name="app_setting">应用设置</string>
 
     <string name="group_calendar">Calendar权限组</string>
     <string name="group_call_log">Call Log权限组</string>
