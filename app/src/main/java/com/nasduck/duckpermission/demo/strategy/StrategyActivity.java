@@ -1,16 +1,18 @@
-package com.nasduck.duckpermission.demo;
+package com.nasduck.duckpermission.demo.strategy;
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.demo.R;
+import com.nasduck.duckpermission.demo.base.BaseActivity;
 import com.nasduck.duckpermission.demo.utils.ToastUtils;
 import com.nasduck.duckpermission.result.strategy.impl.PermissionResultCustomStrategy;
 import com.nasduck.duckpermission.result.listener.OnPermissionResultListener;
 import com.nasduck.duckpermission.result.strategy.impl.PermissionResultGuideStrategy;
-import com.nasduck.duckpermission.result.strategy.impl.PermissionResultNothingStrategy;
 
-public class StrategyActivity extends BaseActivity implements OnPermissionResultListener {
+public class StrategyActivity extends BaseActivity implements
+        OnPermissionResultListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +20,12 @@ public class StrategyActivity extends BaseActivity implements OnPermissionResult
         setContentView(R.layout.activity_strategy);
     }
 
+    /**
+     * Strategy By Default. Just do nothing if user denied the permission request
+     */
     public void onStrategyDoNothingClick(View view) {
         if (DuckPermission.getInstance(this)
-                .setResultStrategy(new PermissionResultNothingStrategy())
+                //.setResultStrategy(new PermissionResultNothingStrategy())
                 .requestCamera()) {
             ToastUtils.showToast(this, "Already granted camera permission");
         }
@@ -28,7 +33,7 @@ public class StrategyActivity extends BaseActivity implements OnPermissionResult
 
     public void onStrategyGuideClick(View view) {
         if (DuckPermission.getInstance(this)
-                .setResultStrategy(new PermissionResultGuideStrategy(this))
+                .setResultStrategy(new PermissionResultGuideStrategy())
                 .requestCamera()) {
             ToastUtils.showToast(this, "Already granted camera permission");
         }
@@ -36,41 +41,21 @@ public class StrategyActivity extends BaseActivity implements OnPermissionResult
 
     public void onStrategyCustomClick(View view) {
         if (DuckPermission.getInstance(this)
-                .setResultStrategy(new PermissionResultCustomStrategy(this))
+                .setResultStrategy(new PermissionResultCustomStrategy())
                 .requestCamera()) {
             ToastUtils.showToast(this, "Already granted camera permission");
         }
     }
 
-    public void onMultipleClick(View view) {
-        if (DuckPermission.getInstance(this)
-                .addCamera()
-                .addAudioRecord()
-                .addWriteExternalStorage()
-                .setResultCode(123)
-                .setResultStrategy(new PermissionResultCustomStrategy(this))
-                .request()) {
-            ToastUtils.showToast(this, "Already granted permissions");
-        }
-    }
-
-    //* Custom Strategy **************************************************************************//
+    //* Custom Strategy OnPermissionResultListener ***********************************************//
 
     @Override
     public void onPermissionsResultGrant(int requestCode) {
-        if (requestCode == 123) {
-            ToastUtils.showToast(this, "Oh Yeah! Permissions Grant!!");
-        } else {
-            ToastUtils.showToast(this, "Camera permission granted!");
-        }
+        ToastUtils.showToast(this, "Oh Yeah! Permission granted!");
     }
 
     @Override
     public void onPermissionsResultDenied(int requestCode) {
-        if (requestCode == 123) {
-            ToastUtils.showToast(this, "Nooooo! Permissions Denied!");
-        }else {
-            ToastUtils.showToast(this, "Camera permission Denied!");
-        }
+        ToastUtils.showToast(this, "Oh lala! Permission Denied!");
     }
 }

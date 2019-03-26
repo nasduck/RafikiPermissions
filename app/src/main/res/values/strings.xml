@@ -2,6 +2,7 @@
     <string name="app_name">DuckPermissionDemo</string>
 
     <string name="different_strategy">Different Permission Strategy</string>
+    <string name="permission_list">Permission List</string>
     <string name="strategy_nothing">Do Nothing Strategy(Default)</string>
     <string name="strategy_guide">Guidem Strategy</string>
     <string name="strategy_custom">Custom Strategy</string>

@@ -1,53 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.nasduck.duckpermission.demo">
-    
     <!-- Dangerous permissions and permission groups -->
     <!-- https://developer.android.google.cn/guide/topics/permissions/overview#permission-groups -->
-    
     <!-- CALENDAR -->
     <uses-permission android:name="android.permission.READ_CALENDAR" />
-    <uses-permission android:name="android.permission.WRITE_CALENDAR" /> 
-    
-    <!-- CALL_LOG -->
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" /> <!-- CALL_LOG -->
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" /> 
-    
-    <!-- CAMERA -->
-    <uses-permission android:name="android.permission.CAMERA" /> 
-    
-    <!-- CONTACTS -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" /> <!-- CAMERA -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- CONTACTS -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" /> 
-    
-    <!-- LOCATION -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" /> <!-- LOCATION -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> 
-    
-    <!-- MICROPHONE -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    
-    <!-- PHONE -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- MICROPHONE -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- PHONE -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
     <uses-permission android:name="android.permission.ADD_VOICEMAIL" />
-    <uses-permission android:name="android.permission.USE_SIP" /> 
-    
-    <!-- SENSORS -->
-    <uses-permission android:name="android.permission.BODY_SENSORS" />
-    
-    <!-- SENSORS -->
+    <uses-permission android:name="android.permission.USE_SIP" /> <!-- SENSORS -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" /> <!-- SENSORS -->
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
-    <uses-permission android:name="android.permission.RECEIVE_MMS" /> 
-    
-    <!-- STORAGE -->
+    <uses-permission android:name="android.permission.RECEIVE_MMS" /> <!-- STORAGE -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -58,6 +38,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PermissionListActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,17 +46,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StorageActivity" />
-        <activity android:name=".SMSActivity" />
-        <activity android:name=".SensorsActivity" />
-        <activity android:name=".PhoneActivity" />
-        <activity android:name=".MicrophoneActivity" />
-        <activity android:name=".LocationActivity" />
-        <activity android:name=".ContactsActivity" />
-        <activity android:name=".CameraActivity" />
-        <activity android:name=".CallLogActivity" />
-        <activity android:name=".CalendarActivity" />
-        <activity android:name=".StrategyActivity" />
+        <activity android:name=".permissions.StorageActivity" />
+        <activity android:name=".permissions.SMSActivity" />
+        <activity android:name=".permissions.SensorsActivity" />
+        <activity android:name=".permissions.PhoneActivity" />
+        <activity android:name=".permissions.MicrophoneActivity" />
+        <activity android:name=".permissions.LocationActivity" />
+        <activity android:name=".permissions.ContactsActivity" />
+        <activity android:name=".permissions.CameraActivity" />
+        <activity android:name=".permissions.CallLogActivity" />
+        <activity android:name=".permissions.CalendarActivity" />
+        <activity android:name=".strategy.StrategyActivity" />
     </application>
 
 </manifest>

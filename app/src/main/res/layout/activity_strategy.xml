@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".StrategyActivity">
+    tools:context=".strategy.StrategyActivity">
 
     <!-- Strategy do nothing -->
     <Button
@@ -31,15 +31,6 @@
         android:layout_height="46dp"
         android:onClick="onStrategyCustomClick"
         android:text="@string/strategy_custom"
-        android:textAlignment="center"
-        android:textSize="16sp" />
-
-    <!-- Multiple -->
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:onClick="onMultipleClick"
-        android:text="Multiple"
         android:textAlignment="center"
         android:textSize="16sp" />
 

@@ -10,8 +10,14 @@ public class BasePermissionStrategy implements IPermissionResultStrategy {
 
     protected OnPermissionResultListener mListener;
 
-    public void PermissionResultCustomStrategy(OnPermissionResultListener mListener) {
-        this.mListener = mListener;
+    public BasePermissionStrategy() {}
+
+    public BasePermissionStrategy(OnPermissionResultListener listener) {
+        this.mListener = listener;
+    }
+
+    public void setListener(OnPermissionResultListener listener) {
+        this.mListener = listener;
     }
 
     @Override
