@@ -23,35 +23,35 @@ public class SMSActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case DuckResultCode.RESULT_CODE_SEND_SMS:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_RECEIVE_SMS:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_READ_SMS:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_RECEIVE_WAP_PUSH:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_RECEIVE_MMS:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");

@@ -10,6 +10,8 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        DuckPermission.getInstance(this).result(requestCode, permissions, grantResults);
+
+        DuckPermission.getInstance(this)
+                .onResult(requestCode, permissions, grantResults);
     }
 }

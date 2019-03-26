@@ -23,42 +23,42 @@ public class PhoneActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case DuckResultCode.RESULT_CODE_READ_PHONE_STATE:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_READ_PHONE_NUMBERS:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_CALL_PHONE:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_ANSWER_PHONE_CALLS:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_ADD_VOICE_MAIL:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_USE_SIP:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");

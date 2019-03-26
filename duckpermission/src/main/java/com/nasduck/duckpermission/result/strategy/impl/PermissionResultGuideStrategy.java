@@ -1,4 +1,4 @@
-package com.nasduck.duckpermission.result.strategy;
+package com.nasduck.duckpermission.result.strategy.impl;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -7,9 +7,10 @@ import android.net.Uri;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 
 import com.nasduck.duckpermission.R;
+import com.nasduck.duckpermission.result.listener.OnPermissionResultListener;
+import com.nasduck.duckpermission.result.strategy.IPermissionResultStrategy;
 import com.nasduck.duckpermission.util.PermissionUtils;
 
 import java.util.List;
@@ -19,22 +20,12 @@ import java.util.List;
  */
 public class PermissionResultGuideStrategy implements IPermissionResultStrategy {
 
-    private PermissionResultCustomStrategyListener mListener;
-
-    public PermissionResultGuideStrategy(PermissionResultCustomStrategyListener mListener) {
-        this.mListener = mListener;
-    }
-
     @Override
     public void onPermissionsResult(Context context, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
         List<String> deniedPermissions = PermissionUtils.filterDeniedPermissions(permissions, grantResults);
 
-        if (deniedPermissions.size() == 0) {
-            if (mListener != null) {
-                mListener.onPermissionsResultGrant(requestCode);
-            }
-        } else {
+        if (deniedPermissions.size() != 0) {
             String name = PermissionUtils.translatePermissions(context, deniedPermissions);
             showGuideDialog(context, requestCode, name);
         }
@@ -69,9 +60,7 @@ public class PermissionResultGuideStrategy implements IPermissionResultStrategy 
         builder.setNegativeButton(context.getString(R.string.cancel), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if (mListener != null) {
-                    mListener.onPermissionsResultDenied(requestCode);
-                }
+                dialog.dismiss();
             }
         });
         builder.show();

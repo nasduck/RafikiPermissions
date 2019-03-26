@@ -23,7 +23,7 @@ public class MicrophoneActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case DuckResultCode.RESULT_CODE_RECORD_AUDIO:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");

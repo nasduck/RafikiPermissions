@@ -6,11 +6,9 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.util.Preconditions;
 
 import com.nasduck.duckpermission.result.strategy.IPermissionResultStrategy;
-import com.nasduck.duckpermission.result.strategy.PermissionResultNothingStrategy;
+import com.nasduck.duckpermission.result.strategy.impl.PermissionResultNothingStrategy;
 import com.nasduck.duckpermission.result.code.DuckResultCode;
 import com.nasduck.duckpermission.util.PermissionUtils;
 
@@ -25,13 +23,13 @@ public class DuckPermission {
     private int mResultCode;
     private Context mContext;
 
-    private IPermissionResultStrategy mOnResult;
+    private IPermissionResultStrategy mResultStrategy;
 
     private DuckPermission(Context context) {
         this.mPermissionList = new ArrayList<>();
         this.mResultCode = DuckResultCode.DUCK_PERMISSION_RESULT_CODE;
         this.mContext = context;
-        this.mOnResult = new PermissionResultNothingStrategy();
+        this.mResultStrategy = new PermissionResultNothingStrategy();
     }
 
     public static DuckPermission getInstance(Activity activity) {
@@ -42,17 +40,8 @@ public class DuckPermission {
         return DEFAULT;
     }
 
-    public boolean result(String[] permissions, int[] grantResults) {
-        List<String> deniedPermissions = PermissionUtils.filterDeniedPermissions(permissions, grantResults);
-        if (deniedPermissions.size() == 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public void result(int requestCode, String[] permissions, int[] grantResults) {
-        mOnResult.onPermissionsResult(mContext, requestCode, permissions, grantResults);
+    public void onResult(int requestCode, String[] permissions, int[] grantResults) {
+        mResultStrategy.onPermissionsResult(mContext, requestCode, permissions, grantResults);
     }
 
     public boolean request() {
@@ -102,8 +91,8 @@ public class DuckPermission {
         return this;
     }
 
-    public DuckPermission setRequestResult(IPermissionResultStrategy onResult) {
-        this.mOnResult = onResult;
+    public DuckPermission setResultStrategy(IPermissionResultStrategy strategy) {
+        this.mResultStrategy = strategy;
         return this;
     }
 

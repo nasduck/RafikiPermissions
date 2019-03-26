@@ -23,14 +23,14 @@ public class LocationActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case DuckResultCode.RESULT_CODE_ACCESS_FINE_LOCATION:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_ACCESS_COARSE_LOCATION:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");

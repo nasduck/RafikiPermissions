@@ -23,21 +23,21 @@ public class ContactsActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case DuckResultCode.RESULT_CODE_READ_CONTACTS:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_WRITE_CONTACTS:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");
                 }
                 break;
             case DuckResultCode.RESULT_CODE_GET_ACCOUNTS:
-                if (DuckPermission.getInstance(this).result(permissions, grantResults)) {
+                if (DuckPermission.getInstance(this).onResult(permissions, grantResults)) {
                     ToastUtils.showToast(this, "Granted");
                 } else {
                     ToastUtils.showToast(this, "Denied");

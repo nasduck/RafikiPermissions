@@ -1,8 +1,9 @@
-package com.nasduck.duckpermission.result.strategy;
+package com.nasduck.duckpermission.result.strategy.impl;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
+
+import com.nasduck.duckpermission.result.strategy.IPermissionResultStrategy;
 
 /**
  * Do nothing if not granted
@@ -11,11 +12,6 @@ public class PermissionResultNothingStrategy implements IPermissionResultStrateg
 
     @Override
     public void onPermissionsResult(Context context, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        for (int grant : grantResults) {
-            if (grant == PackageManager.PERMISSION_DENIED) {
-                // do nothing if permission denied
-
-            }
-        }
+        // do nothing if permission denied
     }
 }

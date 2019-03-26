@@ -1,9 +1,7 @@
-package com.nasduck.duckpermission.result.strategy;
+package com.nasduck.duckpermission.result.strategy.impl;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentActivity;
 
 import com.nasduck.duckpermission.util.PermissionUtils;
 
@@ -12,13 +10,7 @@ import java.util.List;
 /**
  * Strategy customized
  */
-public class PermissionResultCustomStrategy implements IPermissionResultStrategy {
-
-    private PermissionResultCustomStrategyListener mListener;
-
-    public PermissionResultCustomStrategy(PermissionResultCustomStrategyListener mListener) {
-        this.mListener = mListener;
-    }
+public class PermissionResultCustomStrategy extends BasePermissionStrategy {
 
     @Override
     public void onPermissionsResult(Context context, int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
