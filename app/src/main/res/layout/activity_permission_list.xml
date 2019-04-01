@@ -19,100 +19,55 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:text="@string/permission_list"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:text="@string/permission_list"/>
+            android:textSize="18sp" />
 
     </android.support.v7.widget.Toolbar>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onCalendarGroupClick"
-        android:text="@string/group_calendar"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/group_calendar" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onCameraGroupClick"
-        android:text="@string/group_camera"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/group_camera" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onContactsGroupClick"
-        android:text="@string/group_contacts"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/group_contacts" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onLocationGroupClick"
-        android:text="@string/group_location"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/group_location" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onMicrophoneGroupClick"
-        android:text="@string/group_microphone"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/group_microphone" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onPhoneGroupClick"
-        android:text="@string/group_phone"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/group_phone" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onSensorsGroupClick"
-        android:text="@string/group_sensors"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/group_sensors" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onSMSGroupClick"
-        android:text="@string/group_sms"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/group_sms" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onStorageGroupClick"
-        android:text="@string/group_storage"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/group_storage" />
 
 </LinearLayout>

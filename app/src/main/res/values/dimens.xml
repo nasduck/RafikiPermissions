@@ -8,4 +8,9 @@
     <dimen name="toolbar_margin">16dp</dimen>
     <dimen name="toolbar_back_left_margin">10dp</dimen>
 
+    <!-- button -->
+    <dimen name="button_height">46dp</dimen>
+    <dimen name="button_margin_horizontal">8dp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+
 </resources>

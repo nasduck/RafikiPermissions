@@ -26,24 +26,14 @@
 
     <!-- Different Strategy -->
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onStrategyClick"
-        android:text="@string/different_strategy"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/different_strategy" />
 
     <!-- Permission List -->
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onPermissionListClick"
-        android:text="@string/permission_list"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/permission_list" />
 
 </LinearLayout>

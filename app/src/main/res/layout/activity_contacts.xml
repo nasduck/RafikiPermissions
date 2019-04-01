@@ -35,33 +35,18 @@
     </android.support.v7.widget.Toolbar>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onReadContactsClick"
-        android:text="@string/request_read_contacts"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_read_contacts" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onWriteContactsClick"
-        android:text="@string/request_write_contacts"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_write_contacts" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onGetAccountsClick"
-        android:text="@string/request_get_accounts"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_get_accounts" />
 
 </LinearLayout>
