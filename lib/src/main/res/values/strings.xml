@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">afiki Permissions</string>
+
+    <string name="cancel">cancel</string>
+    <string name="grant">grant</string>
+    <string name="guide_title">The following permissions are required to apply some functions:</string>
+    <string name="guide_footer">go \"settings -> App info\" to grant</string>
+    <string name="calendar">calendar</string>
+    <string name="call_log">call_log</string>
+    <string name="camera">camera</string>
+    <string name="contacts">contacts</string>
+    <string name="location">location</string>
+    <string name="sensors">sensors</string>
+    <string name="sms">sms</string>
+    <string name="microphone">microphone</string>
+    <string name="phone">phone</string>
+    <string name="storage">storage</string>
+
+</resources>

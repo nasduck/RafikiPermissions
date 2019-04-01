@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DuckPermission</string>
+    <string name="app_name">afiki Permissions</string>
 
     <string name="cancel">取消</string>
     <string name="grant">去授予</string>
@@ -15,5 +16,4 @@
     <string name="microphone">麦克风</string>
     <string name="phone">电话</string>
     <string name="storage">文件储存</string>
-
 </resources>
