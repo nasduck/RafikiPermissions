@@ -35,73 +35,38 @@
     </android.support.v7.widget.Toolbar>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onReadPhoneStateClick"
-        android:text="@string/request_read_phone_state"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_read_phone_state" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onCallPhoneClick"
-        android:text="@string/request_call_phone"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_call_phone" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onReadCallLogClick"
-        android:text="@string/request_read_call_log"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_read_call_log" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onWriteCallLogClick"
-        android:text="@string/request_write_call_log"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_write_call_log" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onAddVoiceMailClick"
-        android:text="@string/request_add_voice_mail"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_add_voice_mail" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onUseSipClick"
-        android:text="@string/request_use_sip"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_use_sip" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onProcessOutgoingCallsClick"
-        android:text="@string/request_process_outgoing_calls"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_process_outgoing_calls" />
 
 </LinearLayout>

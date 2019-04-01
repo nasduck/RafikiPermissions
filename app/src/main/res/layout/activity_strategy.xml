@@ -38,35 +38,20 @@
 
     <!-- Strategy do nothing -->
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onStrategyDoNothingClick"
-        android:text="@string/strategy_nothing"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/strategy_nothing" />
 
     <!-- Strategy guide -->
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onStrategyGuideClick"
-        android:text="@string/strategy_guide"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/strategy_guide" />
 
     <!-- Strategy custom -->
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        style="@style/ButtonStyle"
         android:onClick="onStrategyCustomClick"
-        android:text="@string/strategy_custom"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/strategy_custom" />
 
 </LinearLayout>

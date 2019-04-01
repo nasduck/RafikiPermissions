@@ -1,1 +1,1 @@
-include ':app', ':duckpermission'
+include ':app', ':lib'
