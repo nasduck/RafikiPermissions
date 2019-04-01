@@ -6,10 +6,6 @@
     <!-- CALENDAR -->
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
-    <!-- CALL_LOG -->
-    <uses-permission android:name="android.permission.READ_CALL_LOG" />
-    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <!-- CAMERA -->
     <uses-permission android:name="android.permission.CAMERA" />
     <!-- CONTACTS -->
@@ -23,11 +19,12 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <!-- PHONE -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
-    <uses-permission android:name="android.permission.ADD_VOICEMAIL" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <uses-permission android:name="com.android.voicemail.permission.ADD_VOICEMAIL" />
     <uses-permission android:name="android.permission.USE_SIP" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <!-- SENSORS -->
     <uses-permission android:name="android.permission.BODY_SENSORS" />
     <!-- SENSORS -->
@@ -62,7 +59,6 @@
         <activity android:name=".permissions.LocationActivity" />
         <activity android:name=".permissions.ContactsActivity" />
         <activity android:name=".permissions.CameraActivity" />
-        <activity android:name=".permissions.CallLogActivity" />
         <activity android:name=".permissions.CalendarActivity" />
         <activity android:name=".strategy.StrategyActivity" />
     </application>

@@ -36,14 +36,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:onClick="onCallLogGroupClick"
-        android:text="@string/group_call_log"
-        android:textAlignment="center"
-        android:textSize="16sp" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
         android:onClick="onCameraGroupClick"
         android:text="@string/group_camera"
         android:textAlignment="center"

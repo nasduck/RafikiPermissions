@@ -45,14 +45,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:onClick="onReadPhoneNumbersClick"
-        android:text="@string/request_read_phone_numbers"
-        android:textAlignment="center"
-        android:textSize="16sp" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
         android:onClick="onCallPhoneClick"
         android:text="@string/request_call_phone"
         android:textAlignment="center"
@@ -61,8 +53,16 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:onClick="onAnswerPhoneCallsClick"
-        android:text="@string/request_answer_phone_calls"
+        android:onClick="onReadCallLogClick"
+        android:text="@string/request_read_call_log"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onWriteCallLogClick"
+        android:text="@string/request_write_call_log"
         android:textAlignment="center"
         android:textSize="16sp" />
 
@@ -79,6 +79,14 @@
         android:layout_height="46dp"
         android:onClick="onUseSipClick"
         android:text="@string/request_use_sip"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:onClick="onProcessOutgoingCallsClick"
+        android:text="@string/request_process_outgoing_calls"
         android:textAlignment="center"
         android:textSize="16sp" />
 

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 
 import com.nasduck.duckpermission.result.strategy.IPermissionResultStrategy;
 import com.nasduck.duckpermission.result.strategy.impl.PermissionResultNothingStrategy;
@@ -21,7 +22,7 @@ public class DuckPermission {
 
     private List<String> mPermissionList;
     private int mResultCode;
-    private Context mContext;
+    private static Context mContext;
 
     private IPermissionResultStrategy mResultStrategy;
 
@@ -32,11 +33,13 @@ public class DuckPermission {
         this.mResultStrategy = new PermissionResultNothingStrategy();
     }
 
-    public static DuckPermission getInstance(Activity activity) {
+    public static DuckPermission getInstance(Context context) {
         if (DEFAULT == null) {
-            DEFAULT = new DuckPermission(activity);
+            DEFAULT = new DuckPermission(context);
+        } else {
+            mContext = context;
+            DEFAULT.removeAllPermissions();
         }
-        DEFAULT.removeAllPermissions();
         return DEFAULT;
     }
 
