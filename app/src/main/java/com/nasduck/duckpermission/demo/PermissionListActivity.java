@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.nasduck.duckpermission.demo.permissions.CalendarActivity;
-import com.nasduck.duckpermission.demo.permissions.CallLogActivity;
 import com.nasduck.duckpermission.demo.permissions.CameraActivity;
 import com.nasduck.duckpermission.demo.permissions.ContactsActivity;
 import com.nasduck.duckpermission.demo.permissions.LocationActivity;
@@ -43,11 +42,6 @@ public class PermissionListActivity extends AppCompatActivity {
 
     public void onCalendarGroupClick(View view) {
         Intent intent = new Intent(this, CalendarActivity.class);
-        startActivity(intent);
-    }
-
-    public void onCallLogGroupClick(View view) {
-        Intent intent = new Intent(this, CallLogActivity.class);
         startActivity(intent);
     }
 

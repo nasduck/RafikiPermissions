@@ -28,6 +28,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onCalendarGroupClick"
         android:text="@string/group_calendar"
         android:textAlignment="center"
@@ -36,14 +38,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:onClick="onCallLogGroupClick"
-        android:text="@string/group_call_log"
-        android:textAlignment="center"
-        android:textSize="16sp" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onCameraGroupClick"
         android:text="@string/group_camera"
         android:textAlignment="center"
@@ -52,6 +48,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onContactsGroupClick"
         android:text="@string/group_contacts"
         android:textAlignment="center"
@@ -60,6 +58,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onLocationGroupClick"
         android:text="@string/group_location"
         android:textAlignment="center"
@@ -68,6 +68,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onMicrophoneGroupClick"
         android:text="@string/group_microphone"
         android:textAlignment="center"
@@ -76,6 +78,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onPhoneGroupClick"
         android:text="@string/group_phone"
         android:textAlignment="center"
@@ -84,6 +88,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onSensorsGroupClick"
         android:text="@string/group_sensors"
         android:textAlignment="center"
@@ -92,6 +98,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onSMSGroupClick"
         android:text="@string/group_sms"
         android:textAlignment="center"
@@ -100,6 +108,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onStorageGroupClick"
         android:text="@string/group_storage"
         android:textAlignment="center"

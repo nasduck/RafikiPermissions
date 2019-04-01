@@ -28,6 +28,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onStrategyClick"
         android:text="@string/different_strategy"
         android:textAlignment="center"
@@ -37,6 +39,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onPermissionListClick"
         android:text="@string/permission_list"
         android:textAlignment="center"
