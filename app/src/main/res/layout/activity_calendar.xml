@@ -37,6 +37,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onReadCalendarClick"
         android:text="@string/request_read_calendar"
         android:textAlignment="center"
@@ -45,6 +47,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onWriteCalendarClick"
         android:text="@string/request_write_calendar"
         android:textAlignment="center"

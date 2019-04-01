@@ -40,6 +40,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onStrategyDoNothingClick"
         android:text="@string/strategy_nothing"
         android:textAlignment="center"
@@ -49,6 +51,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onStrategyGuideClick"
         android:text="@string/strategy_guide"
         android:textAlignment="center"
@@ -58,6 +62,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onStrategyCustomClick"
         android:text="@string/strategy_custom"
         android:textAlignment="center"

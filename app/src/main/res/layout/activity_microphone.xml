@@ -37,6 +37,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onAudioRecordClick"
         android:text="@string/request_audio_record"
         android:textAlignment="center"

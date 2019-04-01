@@ -37,6 +37,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onAccessFineLocationClick"
         android:text="@string/request_access_fine_location"
         android:textAlignment="center"
@@ -45,6 +47,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onAccessCoarseLocationClick"
         android:text="@string/request_access_coarse_location"
         android:textAlignment="center"

@@ -37,6 +37,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onReadPhoneStateClick"
         android:text="@string/request_read_phone_state"
         android:textAlignment="center"
@@ -45,6 +47,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onCallPhoneClick"
         android:text="@string/request_call_phone"
         android:textAlignment="center"
@@ -53,6 +57,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onReadCallLogClick"
         android:text="@string/request_read_call_log"
         android:textAlignment="center"
@@ -61,6 +67,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onWriteCallLogClick"
         android:text="@string/request_write_call_log"
         android:textAlignment="center"
@@ -69,6 +77,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onAddVoiceMailClick"
         android:text="@string/request_add_voice_mail"
         android:textAlignment="center"
@@ -77,6 +87,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onUseSipClick"
         android:text="@string/request_use_sip"
         android:textAlignment="center"
@@ -85,6 +97,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onProcessOutgoingCallsClick"
         android:text="@string/request_process_outgoing_calls"
         android:textAlignment="center"

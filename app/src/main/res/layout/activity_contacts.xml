@@ -37,6 +37,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onReadContactsClick"
         android:text="@string/request_read_contacts"
         android:textAlignment="center"
@@ -45,6 +47,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onWriteContactsClick"
         android:text="@string/request_write_contacts"
         android:textAlignment="center"
@@ -53,6 +57,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="onGetAccountsClick"
         android:text="@string/request_get_accounts"
         android:textAlignment="center"
