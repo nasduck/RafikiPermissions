@@ -1,55 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/colorPrimary"
+        app:navigationIcon="@drawable/ic_toolbar_back_white">
+
+        <TextView
+            android:id="@+id/tv_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:text="@string/group_phone"/>
+
+        <TextView
+            android:id="@+id/tv_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:text="@string/app_setting"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <Button
+        style="@style/ButtonStyle"
         android:onClick="onReadPhoneStateClick"
-        android:text="@string/request_read_phone_state"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_read_phone_state" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:onClick="onReadPhoneNumbersClick"
-        android:text="@string/request_read_phone_numbers"
-        android:textAlignment="center"
-        android:textSize="16sp" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
+        style="@style/ButtonStyle"
         android:onClick="onCallPhoneClick"
-        android:text="@string/request_call_phone"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_call_phone" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:onClick="onAnswerPhoneCallsClick"
-        android:text="@string/request_answer_phone_calls"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        style="@style/ButtonStyle"
+        android:onClick="onReadCallLogClick"
+        android:text="@string/request_read_call_log" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
+        style="@style/ButtonStyle"
+        android:onClick="onWriteCallLogClick"
+        android:text="@string/request_write_call_log" />
+
+    <Button
+        style="@style/ButtonStyle"
         android:onClick="onAddVoiceMailClick"
-        android:text="@string/request_add_voice_mail"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_add_voice_mail" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
+        style="@style/ButtonStyle"
         android:onClick="onUseSipClick"
-        android:text="@string/request_use_sip"
-        android:textAlignment="center"
-        android:textSize="16sp" />
+        android:text="@string/request_use_sip" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:onClick="onProcessOutgoingCallsClick"
+        android:text="@string/request_process_outgoing_calls" />
 
 </LinearLayout>

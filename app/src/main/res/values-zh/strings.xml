@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">DuckPermission</string>
+
+    <string name="app_name">Rafiki Permissions</string>
+
+    <string name="different_strategy">不同的权限策略</string>
+    <string name="permission_list">权限列表</string>
+    <string name="strategy_nothing">(默认) 无策略</string>
+    <string name="strategy_guide">引导策略</string>
+    <string name="strategy_custom">自定义策略</string>
+    <string name="app_setting">应用设置</string>
 
     <string name="group_calendar">Calendar权限组</string>
     <string name="group_call_log">Call Log权限组</string>
@@ -15,10 +23,6 @@
     <string name="request_read_calendar">请求读取日历数据</string>
     <string name="request_write_calendar">请求写入日历数据</string>
 
-    <string name="request_read_call_log">请求读取通话记录</string>
-    <string name="request_write_call_log">请求写入通话记录</string>
-    <string name="request_process_outgoing_calls">请求查看拨出、呼叫期间拨打的号码</string>
-
     <string name="request_camera">请求访问相机</string>
 
     <string name="request_read_contacts">请求读取联系人数据</string>
@@ -31,11 +35,12 @@
     <string name="request_audio_record">请求录制权限</string>
 
     <string name="request_read_phone_state">请求只读状态下访问电话状态</string>
-    <string name="request_read_phone_numbers">请求读取设备的电话号码</string>
     <string name="request_call_phone">请求发起电话呼叫</string>
-    <string name="request_answer_phone_calls">请求接听来电</string>
+    <string name="request_read_call_log">请求读取通话记录</string>
+    <string name="request_write_call_log">请求写入通话记录</string>
     <string name="request_add_voice_mail">请求语音邮件添加到系统中</string>
     <string name="request_use_sip">请求使用SIP服务</string>
+    <string name="request_process_outgoing_calls">请求查看拨出、呼叫期间拨打的号码</string>
 
     <string name="request_body_sensors">请求传感器数据</string>
 

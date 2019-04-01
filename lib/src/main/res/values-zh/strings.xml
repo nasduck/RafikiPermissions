@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">afiki Permissions</string>
+
+    <string name="cancel">取消</string>
+    <string name="grant">去授予</string>
+    <string name="guide_title">应用部分功能需要以下权限:</string>
+    <string name="guide_footer">请至 "设置 -> 应用信息" 中授予</string>
+    <string name="calendar">日历</string>
+    <string name="call_log">通话记录</string>
+    <string name="camera">拍照/摄像</string>
+    <string name="contacts">联系人</string>
+    <string name="location">定位</string>
+    <string name="sensors">传感器</string>
+    <string name="sms">短信</string>
+    <string name="microphone">麦克风</string>
+    <string name="phone">电话</string>
+    <string name="storage">文件储存</string>
+</resources>

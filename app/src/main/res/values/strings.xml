@@ -1,5 +1,12 @@
 <resources>
-    <string name="app_name">DuckPermission</string>
+    <string name="app_name">Rafiki Permissions</string>
+
+    <string name="different_strategy">Different Permission Strategy</string>
+    <string name="permission_list">Permission List</string>
+    <string name="strategy_nothing">Do Nothing Strategy(Default)</string>
+    <string name="strategy_guide">Guidem Strategy</string>
+    <string name="strategy_custom">Custom Strategy</string>
+    <string name="app_setting">App Settings</string>
 
     <string name="group_calendar">Group Calendar</string>
     <string name="group_call_log">Group Call Log</string>
@@ -15,10 +22,6 @@
     <string name="request_read_calendar">Request Read Calendar</string>
     <string name="request_write_calendar">Request Write Calendar</string>
 
-    <string name="request_read_call_log">Request Read Call LOG</string>
-    <string name="request_write_call_log">Request Write Call Log</string>
-    <string name="request_process_outgoing_calls">Request Process Outgoing Calls</string>
-
     <string name="request_camera">Request Camera</string>
 
     <string name="request_read_contacts">Request Read Contacts</string>
@@ -31,11 +34,12 @@
     <string name="request_audio_record">Request Audio Record</string>
 
     <string name="request_read_phone_state">Request Read Phone State</string>
-    <string name="request_read_phone_numbers">Request Read Phone Numbers</string>
     <string name="request_call_phone">Request Call Phone</string>
-    <string name="request_answer_phone_calls">Request Answer Phone Calls</string>
+    <string name="request_read_call_log">Request Read Call Log</string>
+    <string name="request_write_call_log">Request Write Call Log</string>
     <string name="request_add_voice_mail">Request Add Voice Mail</string>
     <string name="request_use_sip">Request Use Sip</string>
+    <string name="request_process_outgoing_calls">Request Process Outgoing Calls</string>
 
     <string name="request_body_sensors">Request Body Sensors</string>
 

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PermissionListActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/colorPrimary"
+        app:navigationIcon="@drawable/ic_toolbar_back_white">
+
+        <TextView
+            android:id="@+id/tv_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/permission_list"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <Button
+        style="@style/ButtonStyle"
+        android:onClick="onCalendarGroupClick"
+        android:text="@string/group_calendar" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:onClick="onCameraGroupClick"
+        android:text="@string/group_camera" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:onClick="onContactsGroupClick"
+        android:text="@string/group_contacts" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:onClick="onLocationGroupClick"
+        android:text="@string/group_location" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:onClick="onMicrophoneGroupClick"
+        android:text="@string/group_microphone" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:onClick="onPhoneGroupClick"
+        android:text="@string/group_phone" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:onClick="onSensorsGroupClick"
+        android:text="@string/group_sensors" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:onClick="onSMSGroupClick"
+        android:text="@string/group_sms" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:onClick="onStorageGroupClick"
+        android:text="@string/group_storage" />
+
+</LinearLayout>
