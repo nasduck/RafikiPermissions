@@ -135,21 +135,6 @@ public class DuckPermission {
         return this;
     }
 
-    public DuckPermission addReadCallLog() {
-        this.mPermissionList.add(Manifest.permission.READ_CALL_LOG);
-        return this;
-    }
-
-    public DuckPermission addWriteCallLog() {
-        this.mPermissionList.add(Manifest.permission.WRITE_CALL_LOG);
-        return this;
-    }
-
-    public DuckPermission addProcessOutgoingCalls() {
-        this.mPermissionList.add(Manifest.permission.PROCESS_OUTGOING_CALLS);
-        return this;
-    }
-
     public DuckPermission addCamera() {
         this.mPermissionList.add(Manifest.permission.CAMERA);
         return this;
@@ -190,18 +175,18 @@ public class DuckPermission {
         return this;
     }
 
-    public DuckPermission addReadPhoneNumbers() {
-        this.mPermissionList.add(Manifest.permission.READ_PHONE_NUMBERS);
-        return this;
-    }
-
     public DuckPermission addCallPhone() {
         this.mPermissionList.add(Manifest.permission.CALL_PHONE);
         return this;
     }
 
-    public DuckPermission addAnswerPhoneCalls() {
-        this.mPermissionList.add(Manifest.permission.ANSWER_PHONE_CALLS);
+    public DuckPermission addReadCallLog() {
+        this.mPermissionList.add(Manifest.permission.READ_CALL_LOG);
+        return this;
+    }
+
+    public DuckPermission addWriteCallLog() {
+        this.mPermissionList.add(Manifest.permission.WRITE_CALL_LOG);
         return this;
     }
 
@@ -212,6 +197,11 @@ public class DuckPermission {
 
     public DuckPermission addUseSip() {
         this.mPermissionList.add(Manifest.permission.USE_SIP);
+        return this;
+    }
+
+    public DuckPermission addProcessOutgoingCalls() {
+        this.mPermissionList.add(Manifest.permission.PROCESS_OUTGOING_CALLS);
         return this;
     }
 
@@ -267,21 +257,6 @@ public class DuckPermission {
         return request(DuckResultCode.RESULT_CODE_WRITE_CALENDAR);
     }
 
-    public Boolean requestReadCallLog() {
-        this.addReadCallLog();
-        return request(DuckResultCode.RESULT_CODE_READ_CALL_LOG);
-    }
-
-    public Boolean requestWriteCallLog() {
-        this.addWriteCallLog();
-        return request(DuckResultCode.RESULT_CODE_WRITE_CALL_LOG);
-    }
-
-    public Boolean requestProcessOutgoingCalls() {
-        this.addProcessOutgoingCalls();
-        return request(DuckResultCode.RESULT_CODE_PROCESS_OUTGOING_CALLS);
-    }
-
     public Boolean requestCamera() {
         this.addCamera();
         return request(DuckResultCode.RESULT_CODE_CAMERA);
@@ -322,19 +297,19 @@ public class DuckPermission {
         return request(DuckResultCode.RESULT_CODE_READ_PHONE_STATE);
     }
 
-    public Boolean requestReadPhoneNumbers() {
-        this.addReadPhoneNumbers();
-        return request(DuckResultCode.RESULT_CODE_READ_PHONE_NUMBERS);
-    }
-
     public Boolean requestCallPhone() {
         this.addCallPhone();
         return request(DuckResultCode.RESULT_CODE_CALL_PHONE);
     }
 
-    public Boolean requestAnswerPhoneCalls() {
-        this.addAnswerPhoneCalls();
-        return request(DuckResultCode.RESULT_CODE_ANSWER_PHONE_CALLS);
+    public Boolean requestReadCallLog() {
+        this.addReadCallLog();
+        return request(DuckResultCode.RESULT_CODE_READ_CALL_LOG);
+    }
+
+    public Boolean requestWriteCallLog() {
+        this.addWriteCallLog();
+        return request(DuckResultCode.RESULT_CODE_WRITE_CALL_LOG);
     }
 
     public Boolean requestAddVoiceMail() {
@@ -345,6 +320,11 @@ public class DuckPermission {
     public Boolean requestUseSip() {
         this.addUseSip();
         return request(DuckResultCode.RESULT_CODE_USE_SIP);
+    }
+
+    public Boolean requestProcessOutgoingCalls() {
+        this.addProcessOutgoingCalls();
+        return request(DuckResultCode.RESULT_CODE_PROCESS_OUTGOING_CALLS);
     }
 
     public Boolean requestBodySensors() {
