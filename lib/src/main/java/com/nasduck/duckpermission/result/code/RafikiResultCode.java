@@ -1,8 +1,8 @@
 package com.nasduck.duckpermission.result.code;
 
-public class DuckResultCode {
+public class RafikiResultCode {
 
-    public final static int DUCK_PERMISSION_RESULT_CODE = 999;
+    public final static int RAFIKI_PERMISSION_RESULT_CODE = 999;
 
     // CALENDAR
     public final static int RESULT_CODE_READ_CALENDAR = 998;

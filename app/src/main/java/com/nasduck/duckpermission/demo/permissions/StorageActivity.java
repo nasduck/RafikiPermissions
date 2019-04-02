@@ -5,11 +5,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
-import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.RafikiPermissions;
 import com.nasduck.duckpermission.demo.R;
 import com.nasduck.duckpermission.demo.base.BaseActivity;
 import com.nasduck.duckpermission.demo.utils.ToastUtils;
-import com.nasduck.duckpermission.result.code.DuckResultCode;
+import com.nasduck.duckpermission.result.code.RafikiResultCode;
 import com.nasduck.duckpermission.result.listener.OnPermissionResultListener;
 import com.nasduck.duckpermission.result.strategy.impl.PermissionResultCustomStrategy;
 
@@ -35,7 +35,7 @@ public class StorageActivity extends BaseActivity implements
     }
 
     public void onReadExternalStorageClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestReadExternalStorage()) {
             Toast.makeText(this, "Already granted read external storage permission", Toast.LENGTH_SHORT).show();
@@ -43,7 +43,7 @@ public class StorageActivity extends BaseActivity implements
     }
 
     public void onWriteExternalStorageClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestWriteExternalStorage()) {
             Toast.makeText(this, "Already granted write external storage permission", Toast.LENGTH_SHORT).show();
@@ -53,10 +53,10 @@ public class StorageActivity extends BaseActivity implements
     @Override
     public void onPermissionsResultGrant(int requestCode) {
         switch (requestCode) {
-            case DuckResultCode.RESULT_CODE_READ_EXTERNAL_STORAGE:
+            case RafikiResultCode.RESULT_CODE_READ_EXTERNAL_STORAGE:
                 ToastUtils.showToast(this, "Read External Storage Granted");
                 break;
-            case DuckResultCode.RESULT_CODE_WRITE_EXTERNAL_STORAGE:
+            case RafikiResultCode.RESULT_CODE_WRITE_EXTERNAL_STORAGE:
                 ToastUtils.showToast(this, "Write External Storage Granted");
                 break;
         }
@@ -65,10 +65,10 @@ public class StorageActivity extends BaseActivity implements
     @Override
     public void onPermissionsResultDenied(int requestCode) {
         switch (requestCode) {
-            case DuckResultCode.RESULT_CODE_READ_EXTERNAL_STORAGE:
+            case RafikiResultCode.RESULT_CODE_READ_EXTERNAL_STORAGE:
                 ToastUtils.showToast(this, "Read External Storage Denied");
                 break;
-            case DuckResultCode.RESULT_CODE_WRITE_EXTERNAL_STORAGE:
+            case RafikiResultCode.RESULT_CODE_WRITE_EXTERNAL_STORAGE:
                 ToastUtils.showToast(this, "Write External Storage Denied");
                 break;
         }

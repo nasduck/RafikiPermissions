@@ -58,10 +58,6 @@ public class PermissionUtils {
         map.put("android.permission.READ_CALENDAR", "--" + context.getString(R.string.calendar));
         map.put("android.permission.WRITE_CALENDAR", "--" + context.getString(R.string.calendar));
 
-        // Call log
-        map.put("android.permission.READ_CALL_LOG", "--" + context.getString(R.string.call_log));
-        map.put("android.permission.WRITE_CALL_LOG", "--" + context.getString(R.string.call_log));
-
         // Camera
         map.put("android.permission.CAMERA",  "--" + context.getString(R.string.camera));
 
@@ -89,11 +85,12 @@ public class PermissionUtils {
 
         // Phone
         map.put("android.permission.READ_PHONE_STATE", "--" + context.getString(R.string.phone));
-        map.put("android.permission.READ_PHONE_NUMBERS", "--" + context.getString(R.string.phone));
         map.put("android.permission.CALL_PHONE", "--" + context.getString(R.string.phone));
-        map.put("android.permission.ANSWER_PHONE_CALLS", "--" + context.getString(R.string.phone));
-        map.put("android.permission.ADD_VOICE_MAIL", "--" + context.getString(R.string.phone));
+        map.put("android.permission.READ_CALL_LOG", "--" + context.getString(R.string.call_log));
+        map.put("android.permission.WRITE_CALL_LOG", "--" + context.getString(R.string.call_log));
+        map.put("com.android.voicemail.permission.ADD_VOICEMAIL", "--" + context.getString(R.string.phone));
         map.put("android.permission.USE_SIP", "--" + context.getString(R.string.phone));
+        map.put("android.permission.PROCESS_OUTGOING_CALLS", "--" + context.getString(R.string.phone));
 
         // Storage
         map.put("android.permission.READ_EXTERNAL_STORAGE", "--" + context.getString(R.string.storage));

@@ -5,11 +5,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
-import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.RafikiPermissions;
 import com.nasduck.duckpermission.demo.R;
 import com.nasduck.duckpermission.demo.base.BaseActivity;
 import com.nasduck.duckpermission.demo.utils.ToastUtils;
-import com.nasduck.duckpermission.result.code.DuckResultCode;
+import com.nasduck.duckpermission.result.code.RafikiResultCode;
 import com.nasduck.duckpermission.result.listener.OnPermissionResultListener;
 import com.nasduck.duckpermission.result.strategy.impl.PermissionResultCustomStrategy;
 
@@ -35,7 +35,7 @@ public class PhoneActivity extends BaseActivity implements
     }
 
     public void onReadPhoneStateClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestReadPhoneState()) {
             Toast.makeText(this, "Already granted read phone state permission", Toast.LENGTH_SHORT).show();
@@ -43,7 +43,7 @@ public class PhoneActivity extends BaseActivity implements
     }
 
     public void onCallPhoneClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestCallPhone()) {
             Toast.makeText(this, "Already granted call phone permission", Toast.LENGTH_SHORT).show();
@@ -51,7 +51,7 @@ public class PhoneActivity extends BaseActivity implements
     }
 
     public void onReadCallLogClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestReadCallLog()) {
             Toast.makeText(this, "Already granted read call log permission", Toast.LENGTH_SHORT).show();
@@ -59,7 +59,7 @@ public class PhoneActivity extends BaseActivity implements
     }
 
     public void onWriteCallLogClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestWriteCallLog()) {
             Toast.makeText(this, "Already granted write call log permission", Toast.LENGTH_SHORT).show();
@@ -67,7 +67,7 @@ public class PhoneActivity extends BaseActivity implements
     }
 
     public void onAddVoiceMailClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestAddVoiceMail()) {
             Toast.makeText(this, "Already granted add voice mail permission", Toast.LENGTH_SHORT).show();
@@ -75,7 +75,7 @@ public class PhoneActivity extends BaseActivity implements
     }
 
     public void onUseSipClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestUseSip()) {
             Toast.makeText(this, "Already granted use sip permission", Toast.LENGTH_SHORT).show();
@@ -83,7 +83,7 @@ public class PhoneActivity extends BaseActivity implements
     }
 
     public void onProcessOutgoingCallsClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestProcessOutgoingCalls()) {
             Toast.makeText(this, "Already granted process outgoing calls permission", Toast.LENGTH_SHORT).show();
@@ -93,25 +93,25 @@ public class PhoneActivity extends BaseActivity implements
     @Override
     public void onPermissionsResultGrant(int requestCode) {
         switch (requestCode) {
-            case DuckResultCode.RESULT_CODE_READ_PHONE_STATE:
+            case RafikiResultCode.RESULT_CODE_READ_PHONE_STATE:
                 ToastUtils.showToast(this, "Read Phone State Granted");
                 break;
-            case DuckResultCode.RESULT_CODE_CALL_PHONE:
+            case RafikiResultCode.RESULT_CODE_CALL_PHONE:
                 ToastUtils.showToast(this, "Call Phone Granted");
                 break;
-            case DuckResultCode.RESULT_CODE_READ_CALL_LOG:
+            case RafikiResultCode.RESULT_CODE_READ_CALL_LOG:
                 ToastUtils.showToast(this, "Read Call Log Granted");
                 break;
-            case DuckResultCode.RESULT_CODE_WRITE_CALL_LOG:
+            case RafikiResultCode.RESULT_CODE_WRITE_CALL_LOG:
                 ToastUtils.showToast(this, "Write Call Log Granted");
                 break;
-            case DuckResultCode.RESULT_CODE_ADD_VOICE_MAIL:
+            case RafikiResultCode.RESULT_CODE_ADD_VOICE_MAIL:
                 ToastUtils.showToast(this, "Add Voice Mail Granted");
                 break;
-            case DuckResultCode.RESULT_CODE_USE_SIP:
+            case RafikiResultCode.RESULT_CODE_USE_SIP:
                 ToastUtils.showToast(this, "Use sip Granted");
                 break;
-            case DuckResultCode.RESULT_CODE_PROCESS_OUTGOING_CALLS:
+            case RafikiResultCode.RESULT_CODE_PROCESS_OUTGOING_CALLS:
                 ToastUtils.showToast(this, "Process Outgoing Granted");
                 break;
         }
@@ -120,25 +120,25 @@ public class PhoneActivity extends BaseActivity implements
     @Override
     public void onPermissionsResultDenied(int requestCode) {
         switch (requestCode) {
-            case DuckResultCode.RESULT_CODE_READ_PHONE_STATE:
+            case RafikiResultCode.RESULT_CODE_READ_PHONE_STATE:
                 ToastUtils.showToast(this, "Read Phone State Denied");
                 break;
-            case DuckResultCode.RESULT_CODE_CALL_PHONE:
+            case RafikiResultCode.RESULT_CODE_CALL_PHONE:
                 ToastUtils.showToast(this, "Call Phone Denied");
                 break;
-            case DuckResultCode.RESULT_CODE_READ_CALL_LOG:
+            case RafikiResultCode.RESULT_CODE_READ_CALL_LOG:
                 ToastUtils.showToast(this, "Read Call Log Denied");
                 break;
-            case DuckResultCode.RESULT_CODE_WRITE_CALL_LOG:
+            case RafikiResultCode.RESULT_CODE_WRITE_CALL_LOG:
                 ToastUtils.showToast(this, "Write Call Log Denied");
                 break;
-            case DuckResultCode.RESULT_CODE_ADD_VOICE_MAIL:
+            case RafikiResultCode.RESULT_CODE_ADD_VOICE_MAIL:
                 ToastUtils.showToast(this, "Add Voice Mail Denied");
                 break;
-            case DuckResultCode.RESULT_CODE_USE_SIP:
+            case RafikiResultCode.RESULT_CODE_USE_SIP:
                 ToastUtils.showToast(this, "Use sip Denied");
                 break;
-            case DuckResultCode.RESULT_CODE_PROCESS_OUTGOING_CALLS:
+            case RafikiResultCode.RESULT_CODE_PROCESS_OUTGOING_CALLS:
                 ToastUtils.showToast(this, "Process Outgoing Denied");
                 break;
         }

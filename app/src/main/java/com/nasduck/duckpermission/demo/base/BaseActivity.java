@@ -8,7 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.RafikiPermissions;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -16,7 +16,7 @@ public class BaseActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        DuckPermission.getInstance(this)
+        RafikiPermissions.getInstance(this)
                 .onResult(requestCode, permissions, grantResults);
     }
 

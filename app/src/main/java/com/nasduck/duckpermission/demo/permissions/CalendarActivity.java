@@ -5,11 +5,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
-import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.RafikiPermissions;
 import com.nasduck.duckpermission.demo.R;
 import com.nasduck.duckpermission.demo.base.BaseActivity;
 import com.nasduck.duckpermission.demo.utils.ToastUtils;
-import com.nasduck.duckpermission.result.code.DuckResultCode;
+import com.nasduck.duckpermission.result.code.RafikiResultCode;
 import com.nasduck.duckpermission.result.listener.OnPermissionResultListener;
 import com.nasduck.duckpermission.result.strategy.impl.PermissionResultCustomStrategy;
 
@@ -35,7 +35,7 @@ public class CalendarActivity extends BaseActivity implements
     }
 
     public void onReadCalendarClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestReadCalendar()) {
             Toast.makeText(this, "Already granted read calendar permission", Toast.LENGTH_SHORT).show();
@@ -43,7 +43,7 @@ public class CalendarActivity extends BaseActivity implements
     }
 
     public void onWriteCalendarClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestWriteCalendar()) {
             Toast.makeText(this, "Already granted write calendar permission", Toast.LENGTH_SHORT).show();
@@ -53,10 +53,10 @@ public class CalendarActivity extends BaseActivity implements
     @Override
     public void onPermissionsResultGrant(int requestCode) {
         switch (requestCode) {
-            case DuckResultCode.RESULT_CODE_READ_CALENDAR:
+            case RafikiResultCode.RESULT_CODE_READ_CALENDAR:
                 ToastUtils.showToast(this, "Read Calendar Granted");
                 break;
-            case DuckResultCode.RESULT_CODE_WRITE_CALENDAR:
+            case RafikiResultCode.RESULT_CODE_WRITE_CALENDAR:
                 ToastUtils.showToast(this, "Write Calendar Granted");
                 break;
         }
@@ -65,10 +65,10 @@ public class CalendarActivity extends BaseActivity implements
     @Override
     public void onPermissionsResultDenied(int requestCode) {
         switch (requestCode) {
-            case DuckResultCode.RESULT_CODE_READ_CALENDAR:
+            case RafikiResultCode.RESULT_CODE_READ_CALENDAR:
                 ToastUtils.showToast(this, "Read Calendar Denied");
                 break;
-            case DuckResultCode.RESULT_CODE_WRITE_CALENDAR:
+            case RafikiResultCode.RESULT_CODE_WRITE_CALENDAR:
                 ToastUtils.showToast(this, "Write Calendar Denied");
                 break;
         }

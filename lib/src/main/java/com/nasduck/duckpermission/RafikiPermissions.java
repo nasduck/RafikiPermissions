@@ -6,19 +6,18 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
-import android.util.Log;
 
 import com.nasduck.duckpermission.result.strategy.IPermissionResultStrategy;
 import com.nasduck.duckpermission.result.strategy.impl.PermissionResultNothingStrategy;
-import com.nasduck.duckpermission.result.code.DuckResultCode;
+import com.nasduck.duckpermission.result.code.RafikiResultCode;
 import com.nasduck.duckpermission.util.PermissionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DuckPermission {
+public class RafikiPermissions {
 
-    private static DuckPermission DEFAULT;
+    private static RafikiPermissions DEFAULT;
 
     private List<String> mPermissionList;
     private int mResultCode;
@@ -26,16 +25,16 @@ public class DuckPermission {
 
     private IPermissionResultStrategy mResultStrategy;
 
-    private DuckPermission(Context context) {
+    private RafikiPermissions(Context context) {
         this.mPermissionList = new ArrayList<>();
-        this.mResultCode = DuckResultCode.DUCK_PERMISSION_RESULT_CODE;
+        this.mResultCode = RafikiResultCode.RAFIKI_PERMISSION_RESULT_CODE;
         this.mContext = context;
         this.mResultStrategy = new PermissionResultNothingStrategy();
     }
 
-    public static DuckPermission getInstance(Context context) {
+    public static RafikiPermissions getInstance(Context context) {
         if (DEFAULT == null) {
-            DEFAULT = new DuckPermission(context);
+            DEFAULT = new RafikiPermissions(context);
         } else {
             mContext = context;
             DEFAULT.removeAllPermissions();
@@ -83,18 +82,18 @@ public class DuckPermission {
      *
      * @return
      */
-    public boolean duck() {
+    public boolean rafiki() {
         return request();
     }
 
     //* Setter ***********************************************************************************//
 
-    public DuckPermission setResultCode(int resultCode) {
+    public RafikiPermissions setResultCode(int resultCode) {
         this.mResultCode = resultCode;
         return this;
     }
 
-    public DuckPermission setResultStrategy(IPermissionResultStrategy strategy) {
+    public RafikiPermissions setResultStrategy(IPermissionResultStrategy strategy) {
         this.mResultStrategy = strategy;
         return this;
     }
@@ -120,127 +119,127 @@ public class DuckPermission {
         this.mPermissionList = new ArrayList<>();
     }
 
-    public DuckPermission addPermissions(List<String> permissions) {
+    public RafikiPermissions addPermissions(List<String> permissions) {
         this.mPermissionList.addAll(permissions);
         return this;
     }
 
-    public DuckPermission addReadCalendar() {
+    public RafikiPermissions addReadCalendar() {
         this.mPermissionList.add(Manifest.permission.READ_CALENDAR);
         return this;
     }
 
-    public DuckPermission addWriteCalendar() {
+    public RafikiPermissions addWriteCalendar() {
         this.mPermissionList.add(Manifest.permission.WRITE_CALENDAR);
         return this;
     }
 
-    public DuckPermission addCamera() {
+    public RafikiPermissions addCamera() {
         this.mPermissionList.add(Manifest.permission.CAMERA);
         return this;
     }
 
-    public DuckPermission addReadContacts() {
+    public RafikiPermissions addReadContacts() {
         this.mPermissionList.add(Manifest.permission.READ_CONTACTS);
         return this;
     }
 
-    public DuckPermission addWriteContacts() {
+    public RafikiPermissions addWriteContacts() {
         this.mPermissionList.add(Manifest.permission.WRITE_CONTACTS);
         return this;
     }
 
-    public DuckPermission addGetAccounts() {
+    public RafikiPermissions addGetAccounts() {
         this.mPermissionList.add(Manifest.permission.GET_ACCOUNTS);
         return this;
     }
 
-    public DuckPermission addAudioRecord() {
+    public RafikiPermissions addAudioRecord() {
         this.mPermissionList.add(Manifest.permission.RECORD_AUDIO);
         return this;
     }
 
-    public DuckPermission addAccessFineLocation() {
+    public RafikiPermissions addAccessFineLocation() {
         this.mPermissionList.add(Manifest.permission.ACCESS_FINE_LOCATION);
         return this;
     }
 
-    public DuckPermission addAccessCoarseLocation() {
+    public RafikiPermissions addAccessCoarseLocation() {
         this.mPermissionList.add(Manifest.permission.ACCESS_COARSE_LOCATION);
         return this;
     }
 
-    public DuckPermission addReadPhoneState() {
+    public RafikiPermissions addReadPhoneState() {
         this.mPermissionList.add(Manifest.permission.READ_PHONE_STATE);
         return this;
     }
 
-    public DuckPermission addCallPhone() {
+    public RafikiPermissions addCallPhone() {
         this.mPermissionList.add(Manifest.permission.CALL_PHONE);
         return this;
     }
 
-    public DuckPermission addReadCallLog() {
+    public RafikiPermissions addReadCallLog() {
         this.mPermissionList.add(Manifest.permission.READ_CALL_LOG);
         return this;
     }
 
-    public DuckPermission addWriteCallLog() {
+    public RafikiPermissions addWriteCallLog() {
         this.mPermissionList.add(Manifest.permission.WRITE_CALL_LOG);
         return this;
     }
 
-    public DuckPermission addAddVoiceMail() {
+    public RafikiPermissions addAddVoiceMail() {
         this.mPermissionList.add(Manifest.permission.ADD_VOICEMAIL);
         return this;
     }
 
-    public DuckPermission addUseSip() {
+    public RafikiPermissions addUseSip() {
         this.mPermissionList.add(Manifest.permission.USE_SIP);
         return this;
     }
 
-    public DuckPermission addProcessOutgoingCalls() {
+    public RafikiPermissions addProcessOutgoingCalls() {
         this.mPermissionList.add(Manifest.permission.PROCESS_OUTGOING_CALLS);
         return this;
     }
 
-    public DuckPermission addBodySensors() {
+    public RafikiPermissions addBodySensors() {
         this.mPermissionList.add(Manifest.permission.BODY_SENSORS);
         return this;
     }
 
-    public DuckPermission addSendSMS() {
+    public RafikiPermissions addSendSMS() {
         this.mPermissionList.add(Manifest.permission.SEND_SMS);
         return this;
     }
 
-    public DuckPermission addReceiveSMS() {
+    public RafikiPermissions addReceiveSMS() {
         this.mPermissionList.add(Manifest.permission.RECEIVE_SMS);
         return this;
     }
 
-    public DuckPermission addReadSMS() {
+    public RafikiPermissions addReadSMS() {
         this.mPermissionList.add(Manifest.permission.READ_SMS);
         return this;
     }
 
-    public DuckPermission addReceiveWapPush() {
+    public RafikiPermissions addReceiveWapPush() {
         this.mPermissionList.add(Manifest.permission.RECEIVE_WAP_PUSH);
         return this;
     }
 
-    public DuckPermission addReceiveMMS() {
+    public RafikiPermissions addReceiveMMS() {
         this.mPermissionList.add(Manifest.permission.RECEIVE_MMS);
         return this;
     }
 
-    public DuckPermission addReadExternalStorage() {
+    public RafikiPermissions addReadExternalStorage() {
         this.mPermissionList.add(Manifest.permission.READ_EXTERNAL_STORAGE);
         return this;
     }
 
-    public DuckPermission addWriteExternalStorage() {
+    public RafikiPermissions addWriteExternalStorage() {
         this.mPermissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
         return this;
     }
@@ -249,121 +248,121 @@ public class DuckPermission {
 
     public Boolean requestReadCalendar() {
         this.addReadCalendar();
-        return request(DuckResultCode.RESULT_CODE_READ_CALENDAR);
+        return request(RafikiResultCode.RESULT_CODE_READ_CALENDAR);
     }
 
     public Boolean requestWriteCalendar() {
         this.addWriteCalendar();
-        return request(DuckResultCode.RESULT_CODE_WRITE_CALENDAR);
+        return request(RafikiResultCode.RESULT_CODE_WRITE_CALENDAR);
     }
 
     public Boolean requestCamera() {
         this.addCamera();
-        return request(DuckResultCode.RESULT_CODE_CAMERA);
+        return request(RafikiResultCode.RESULT_CODE_CAMERA);
     }
 
     public Boolean requestReadContacts() {
         this.addReadContacts();
-        return request(DuckResultCode.RESULT_CODE_READ_CONTACTS);
+        return request(RafikiResultCode.RESULT_CODE_READ_CONTACTS);
     }
 
     public Boolean requestWriteContacts() {
         this.addWriteContacts();
-        return request(DuckResultCode.RESULT_CODE_WRITE_CONTACTS);
+        return request(RafikiResultCode.RESULT_CODE_WRITE_CONTACTS);
     }
 
     public Boolean requestGetAccounts() {
         this.addGetAccounts();
-        return request(DuckResultCode.RESULT_CODE_GET_ACCOUNTS);
+        return request(RafikiResultCode.RESULT_CODE_GET_ACCOUNTS);
     }
 
     public Boolean requestAudioRecord() {
         this.addAudioRecord();
-        return request(DuckResultCode.RESULT_CODE_RECORD_AUDIO);
+        return request(RafikiResultCode.RESULT_CODE_RECORD_AUDIO);
     }
 
     public Boolean requestAccessFineLocation() {
         this.addAccessFineLocation();
-        return request(DuckResultCode.RESULT_CODE_ACCESS_FINE_LOCATION);
+        return request(RafikiResultCode.RESULT_CODE_ACCESS_FINE_LOCATION);
     }
 
     public Boolean requestAccessCoarseLocation() {
         this.addAccessCoarseLocation();
-        return request(DuckResultCode.RESULT_ACCESS_COARSE_LOCATION);
+        return request(RafikiResultCode.RESULT_ACCESS_COARSE_LOCATION);
     }
 
     public Boolean requestReadPhoneState() {
         this.addReadPhoneState();
-        return request(DuckResultCode.RESULT_CODE_READ_PHONE_STATE);
+        return request(RafikiResultCode.RESULT_CODE_READ_PHONE_STATE);
     }
 
     public Boolean requestCallPhone() {
         this.addCallPhone();
-        return request(DuckResultCode.RESULT_CODE_CALL_PHONE);
+        return request(RafikiResultCode.RESULT_CODE_CALL_PHONE);
     }
 
     public Boolean requestReadCallLog() {
         this.addReadCallLog();
-        return request(DuckResultCode.RESULT_CODE_READ_CALL_LOG);
+        return request(RafikiResultCode.RESULT_CODE_READ_CALL_LOG);
     }
 
     public Boolean requestWriteCallLog() {
         this.addWriteCallLog();
-        return request(DuckResultCode.RESULT_CODE_WRITE_CALL_LOG);
+        return request(RafikiResultCode.RESULT_CODE_WRITE_CALL_LOG);
     }
 
     public Boolean requestAddVoiceMail() {
         this.addAddVoiceMail();
-        return request(DuckResultCode.RESULT_CODE_ADD_VOICE_MAIL);
+        return request(RafikiResultCode.RESULT_CODE_ADD_VOICE_MAIL);
     }
 
     public Boolean requestUseSip() {
         this.addUseSip();
-        return request(DuckResultCode.RESULT_CODE_USE_SIP);
+        return request(RafikiResultCode.RESULT_CODE_USE_SIP);
     }
 
     public Boolean requestProcessOutgoingCalls() {
         this.addProcessOutgoingCalls();
-        return request(DuckResultCode.RESULT_CODE_PROCESS_OUTGOING_CALLS);
+        return request(RafikiResultCode.RESULT_CODE_PROCESS_OUTGOING_CALLS);
     }
 
     public Boolean requestBodySensors() {
         this.addBodySensors();
-        return request(DuckResultCode.RESULT_CODE_BODY_SENSORS);
+        return request(RafikiResultCode.RESULT_CODE_BODY_SENSORS);
     }
 
     public Boolean requestSendSMS() {
         this.addSendSMS();
-        return request(DuckResultCode.RESULT_CODE_SEND_SMS);
+        return request(RafikiResultCode.RESULT_CODE_SEND_SMS);
     }
 
     public Boolean requestReceiveSMS() {
         this.addReceiveSMS();
-        return request(DuckResultCode.RESULT_CODE_RECEIVE_SMS);
+        return request(RafikiResultCode.RESULT_CODE_RECEIVE_SMS);
     }
 
     public Boolean requestReadSMS() {
         this.addReadSMS();
-        return request(DuckResultCode.RESULT_CODE_READ_SMS);
+        return request(RafikiResultCode.RESULT_CODE_READ_SMS);
     }
 
     public Boolean requestReceiveWapPush() {
         this.addReceiveWapPush();
-        return request(DuckResultCode.RESULT_CODE_RECEIVE_WAP_PUSH);
+        return request(RafikiResultCode.RESULT_CODE_RECEIVE_WAP_PUSH);
     }
 
     public Boolean requestReceiveMMS() {
         this.addReceiveMMS();
-        return request(DuckResultCode.RESULT_CODE_RECEIVE_MMS);
+        return request(RafikiResultCode.RESULT_CODE_RECEIVE_MMS);
     }
 
     public Boolean requestReadExternalStorage() {
         this.addReadExternalStorage();
-        return request(DuckResultCode.RESULT_CODE_READ_EXTERNAL_STORAGE);
+        return request(RafikiResultCode.RESULT_CODE_READ_EXTERNAL_STORAGE);
     }
 
     public Boolean requestWriteExternalStorage() {
         this.addWriteExternalStorage();
-        return request(DuckResultCode.RESULT_CODE_WRITE_EXTERNAL_STORAGE);
+        return request(RafikiResultCode.RESULT_CODE_WRITE_EXTERNAL_STORAGE);
     }
 }

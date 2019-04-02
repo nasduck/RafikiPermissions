@@ -5,11 +5,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
-import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.RafikiPermissions;
 import com.nasduck.duckpermission.demo.R;
 import com.nasduck.duckpermission.demo.base.BaseActivity;
 import com.nasduck.duckpermission.demo.utils.ToastUtils;
-import com.nasduck.duckpermission.result.code.DuckResultCode;
+import com.nasduck.duckpermission.result.code.RafikiResultCode;
 import com.nasduck.duckpermission.result.listener.OnPermissionResultListener;
 import com.nasduck.duckpermission.result.strategy.impl.PermissionResultCustomStrategy;
 
@@ -35,7 +35,7 @@ public class LocationActivity extends BaseActivity implements
     }
 
     public void onAccessFineLocationClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestAccessFineLocation()) {
             Toast.makeText(this, "Already granted access fine location permission", Toast.LENGTH_SHORT).show();
@@ -43,7 +43,7 @@ public class LocationActivity extends BaseActivity implements
     }
 
     public void onAccessCoarseLocationClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestAccessCoarseLocation()) {
             Toast.makeText(this, "Already granted access coarse location permission", Toast.LENGTH_SHORT).show();
@@ -53,10 +53,10 @@ public class LocationActivity extends BaseActivity implements
     @Override
     public void onPermissionsResultGrant(int requestCode) {
         switch (requestCode) {
-            case DuckResultCode.RESULT_CODE_ACCESS_FINE_LOCATION:
+            case RafikiResultCode.RESULT_CODE_ACCESS_FINE_LOCATION:
                 ToastUtils.showToast(this, "Access Fine Location Granted");
                 break;
-            case DuckResultCode.RESULT_ACCESS_COARSE_LOCATION:
+            case RafikiResultCode.RESULT_ACCESS_COARSE_LOCATION:
                 ToastUtils.showToast(this, "Access Coarse Granted");
                 break;
         }
@@ -65,10 +65,10 @@ public class LocationActivity extends BaseActivity implements
     @Override
     public void onPermissionsResultDenied(int requestCode) {
         switch (requestCode) {
-            case DuckResultCode.RESULT_CODE_ACCESS_FINE_LOCATION:
+            case RafikiResultCode.RESULT_CODE_ACCESS_FINE_LOCATION:
                 ToastUtils.showToast(this, "Access Fine Location Denied");
                 break;
-            case DuckResultCode.RESULT_ACCESS_COARSE_LOCATION:
+            case RafikiResultCode.RESULT_ACCESS_COARSE_LOCATION:
                 ToastUtils.showToast(this, "Access Coarse Denied");
                 break;
         }

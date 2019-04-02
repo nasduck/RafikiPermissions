@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.nasduck.duckpermission.DuckPermission;
+import com.nasduck.duckpermission.RafikiPermissions;
 import com.nasduck.duckpermission.demo.R;
 import com.nasduck.duckpermission.demo.base.BaseActivity;
 import com.nasduck.duckpermission.demo.utils.ToastUtils;
@@ -38,7 +38,7 @@ public class StrategyActivity extends BaseActivity implements
      * Strategy By Default. Just do nothing if user denied the permission request
      */
     public void onStrategyDoNothingClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultNothingStrategy())
                 .requestCamera()) {
             ToastUtils.showToast(this, "Already granted camera permission");
@@ -46,7 +46,7 @@ public class StrategyActivity extends BaseActivity implements
     }
 
     public void onStrategyGuideClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultGuideStrategy())
                 .requestCamera()) {
             ToastUtils.showToast(this, "Already granted camera permission");
@@ -54,7 +54,7 @@ public class StrategyActivity extends BaseActivity implements
     }
 
     public void onStrategyCustomClick(View view) {
-        if (DuckPermission.getInstance(this)
+        if (RafikiPermissions.getInstance(this)
                 .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestCamera()) {
             ToastUtils.showToast(this, "Already granted camera permission");
