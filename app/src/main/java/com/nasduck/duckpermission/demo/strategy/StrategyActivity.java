@@ -11,6 +11,7 @@ import com.nasduck.duckpermission.demo.utils.ToastUtils;
 import com.nasduck.duckpermission.result.strategy.impl.PermissionResultCustomStrategy;
 import com.nasduck.duckpermission.result.listener.OnPermissionResultListener;
 import com.nasduck.duckpermission.result.strategy.impl.PermissionResultGuideStrategy;
+import com.nasduck.duckpermission.result.strategy.impl.PermissionResultNothingStrategy;
 
 public class StrategyActivity extends BaseActivity implements
         OnPermissionResultListener {
@@ -38,7 +39,7 @@ public class StrategyActivity extends BaseActivity implements
      */
     public void onStrategyDoNothingClick(View view) {
         if (DuckPermission.getInstance(this)
-                //.setResultStrategy(new PermissionResultNothingStrategy())
+                .setResultStrategy(new PermissionResultNothingStrategy())
                 .requestCamera()) {
             ToastUtils.showToast(this, "Already granted camera permission");
         }
@@ -54,7 +55,7 @@ public class StrategyActivity extends BaseActivity implements
 
     public void onStrategyCustomClick(View view) {
         if (DuckPermission.getInstance(this)
-                .setResultStrategy(new PermissionResultCustomStrategy())
+                .setResultStrategy(new PermissionResultCustomStrategy(this))
                 .requestCamera()) {
             ToastUtils.showToast(this, "Already granted camera permission");
         }
