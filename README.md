@@ -52,7 +52,6 @@ public class BaseActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 	
-        // 在onRequestPermissionsResult中加入这行代码，传入对应的值
         RafikiPermissions.getInstance(this).onResult(requestCode, permissions, grantResults);
     }
 }
