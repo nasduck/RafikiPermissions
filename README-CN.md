@@ -10,7 +10,7 @@ RafikiPermissions 是为了简化 Android 危险权限动态申请操作，将�
 * [官方危险权限列表-中文](https://developer.android.google.cn/guide/topics/permissions/overview#permission-groups)
 
 ## 依赖
-步骤一：在项目的build.gradle中添加jitpack
+步骤一：在项目的 `build.gradle` 中添加 `jitpack`
 
 ```gradle
 allprojects {
@@ -25,21 +25,26 @@ allprojects {
 
 ```gradle
 dependencies {
-    implementation 'com.github.nasduck:RafikiPermissions:1.1.2'
+    implementation 'com.github.nasduck:RafikiPermissions:1.2.0'
 }
 ```
 
-## 使用方式
+## 基本使用
+
 #### [详细使用参考文档](https://github.com/nasduck/RafikiPermissions/wiki/%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3)
-### 基本权限申请
-一个简单的例子，假设我们需要实现拍照的功能，这时候要动态获取相机的权限**Manifest.permission.CAMERA**
-#### 1、添加权限到AndroidManifest.xml
-在AndroidManifest.xml中加入相应的权限代码：
+
+假设我们需要动态获取相机的权限 `Manifest.permission.CAMERA`
+
+#### 1、添加权限
+
+在 `AndroidManifest.xml` 中加入相应的权限：
+
 ```xml
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-#### 2、在BaseActivity中进行返回结果的初始化
+#### 2、在基类 Activity 中统一进行返回结果的处理
+
 ```java
 public class BaseActivity extends AppCompatActivity {
     @Override
@@ -52,25 +57,28 @@ public class BaseActivity extends AppCompatActivity {
 }
 ```
 
-#### 3、在继承了BaseActivity的Activity中使用
+#### 3、在继承了基类的 Activity 中请求权限
+
 ```java
 // 对于权限是否授予进行判断，已授予返回true，未授予进行权限授予操作
 if (RafikiPermissions.getInstance(this)
-        .setResultStrategy(new PermissionResultCustomStrategy(this))    // 设置自定义的权限授予结果处理策略
-        .requestCamera()) {                                             // 请求相机权限
-    // 如果已经授予权限后，需要作的操作逻辑
+        .setResultStrategy(new PermissionResultCustomStrategy(this))    // 设置自定义的权限授予结果处理策略, 也有其他2种预定义策略
+        .requestCamera()) {
+    // 如果已经授予权限的逻辑操作
+    ...
 }
 ```
 
-#### 4、在回调中进行权限授予后的逻辑处理
+#### 4、实现授权结果的回调
+
+实现接口 `OnPermissionResultListener`:
 
 ```java
 @Override   
 public void onPermissionsResultGrant(int requestCode) {
     switch (requestCode) {
-        // 根据权限对应的requestCode进行权限操作的匹配，授予失败同理
         case RafikiResultCode.RESULT_CODE_CAMERA:
-            // 权限授予成功后的操作
+            // 权限授予成功
     }
 }
 
@@ -78,20 +86,18 @@ public void onPermissionsResultGrant(int requestCode) {
 public void onPermissionsResultDenied(int requestCode) {
     switch (requestCode) {
         case RafikiResultCode.RESULT_CODE_CAMERA:
-            // 权限授予失败后的操作
+            // 权限授予失败后
     }
 }
 ```
 
-### 权限申请策略
+## 权限处理策略
 
-之前的例子中已经使用了PermissionResultCustomStrategy，是留给用户自己去实现的权限授予操作后的逻辑，在本库中已经封装了几种策略:
+提供三种权限处理策略
 
-- PermissionResultNothingStrategy——授予权限后不做任何操作
-- PermissionResultGuideStrategy——授予权限失败后引导用户去设置中作权限授予
-
-## 联系我们
-
+1. PermissionResultNothingStrategy 无论是否授予策略, 不做任何操作
+2. PermissionResultGuideStrategy 用户拒绝授予权限后, 弹出弹窗引导用户去应用设置中作权限授予
+3. PermissionResultCustomStrategy 自定义权限授予策略. 实现 `OnPermissionResultListener` 接口自定义授权回调处理逻辑
 
 ## LICENSE
 > Copyright
