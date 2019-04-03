@@ -95,9 +95,15 @@ public void onPermissionsResultDenied(int requestCode) {
 
 提供三种权限处理策略
 
-1. **PermissionResultNothingStrategy** 默认策略. 无论是否授予策略, 不做任何操作
-2. **PermissionResultGuideStrategy** 用户拒绝授予权限后, 弹出弹窗引导用户去应用设置中作权限授予
-3. **PermissionResultCustomStrategy** 自定义权限授予策略. 实现 `OnPermissionResultListener` 接口自定义授权回调处理逻辑
+1. **PermissionResultNothingStrategy** 默认策略. 无论是否授予策略, 不做任何操作   
+效果图：   
+![NothingStrategy](https://github.com/nasduck/RafikiPermissions/blob/dev/art/NothingStrategy.gif?raw=true)
+2. **PermissionResultGuideStrategy** 用户拒绝授予权限后, 弹出弹窗引导用户去应用设置中作权限授予   
+效果图：   
+![GuideStrategy](https://github.com/nasduck/RafikiPermissions/blob/dev/art/GuideStrategy.gif?raw=true)
+3. **PermissionResultCustomStrategy** 自定义权限授予策略. 实现 `OnPermissionResultListener` 接口自定义授权回调处理逻辑   
+效果图：   
+![CustomStrategy](https://github.com/nasduck/RafikiPermissions/blob/dev/art/CustomStrategy.gif?raw=true)
 
 ## 请求权限不同的方式
 
