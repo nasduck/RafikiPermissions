@@ -1,6 +1,6 @@
 ![topic map](https://github.com/nasduck/RafikiPermissions/blob/dev/art/topic%20map.png?raw=true)
 
-[![API](https://img.shields.io/badge/RafikiPermissions-v1.1.2-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)&ensp;
+[![API](https://img.shields.io/badge/RafikiPermissions-v1.2.0-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)&ensp;
 [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)&ensp;
 [![API](https://img.shields.io/badge/License-Apche2.0-brightgreen.svg?style=flat)](https://github.com/nasduck/AfikiPermissions/blob/master/LICENSE)
 
@@ -64,7 +64,7 @@ public class BaseActivity extends AppCompatActivity {
 if (RafikiPermissions.getInstance(this)
         .setResultStrategy(new PermissionResultCustomStrategy(this))    // 设置自定义的权限授予结果处理策略, 也有其他2种预定义策略
         .requestCamera()) {
-    // 如果已经授予权限的逻辑操作
+    // 已经授予权限的逻辑操作
     ...
 }
 ```
@@ -95,9 +95,44 @@ public void onPermissionsResultDenied(int requestCode) {
 
 提供三种权限处理策略
 
-1. PermissionResultNothingStrategy 无论是否授予策略, 不做任何操作
-2. PermissionResultGuideStrategy 用户拒绝授予权限后, 弹出弹窗引导用户去应用设置中作权限授予
-3. PermissionResultCustomStrategy 自定义权限授予策略. 实现 `OnPermissionResultListener` 接口自定义授权回调处理逻辑
+1. **PermissionResultNothingStrategy** 默认策略. 无论是否授予策略, 不做任何操作
+2. **PermissionResultGuideStrategy** 用户拒绝授予权限后, 弹出弹窗引导用户去应用设置中作权限授予
+3. **PermissionResultCustomStrategy** 自定义权限授予策略. 实现 `OnPermissionResultListener` 接口自定义授权回调处理逻辑
+
+## 请求权限不同的方式
+
+##### 请求单个权限
+
+封装了各个权限对应的 .requestXX() 方法. 比如上面例子中, 请求照相权限, 直接调用 `requestCamera()`
+
+##### 请求多个权限
+
+动态请求多个权限时，根据需要添加相应的权限，最后使用 `request()` 方法请求权限，参数传入自定义的 requestCode（不传则默认为`RafikiResultCode.RAFIKI_PERMISSION_RESULT_CODE`), 用以在回调中识别这次请求:
+
+```java
+if (RafikiPermissions.getInstance(this)
+        .addReadExternalStorage()
+        .addWriteExternalStorage()
+        .setResultStrategy(new PermissionResultCustomStrategy(this)) // 设置自定义的权限授予结果处理策略
+        .request(RESULT_CODE)) {
+    // 已经授予权限的逻辑操作
+}
+```
+
+或者使用 `addPermissions()` 设置一组权限
+
+```java
+List<String> permissions = new ArrayList();
+permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE);
+permissions.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        
+if (RafikiPermissions.getInstance(this)
+        .addPermissions(permissions)
+        .setResultStrategy(new PermissionResultCustomStrategy(this))
+        .request(RESULT_CODE)) {
+    // 已经授予权限的逻辑操作
+}
+```
 
 ## LICENSE
 > Copyright
