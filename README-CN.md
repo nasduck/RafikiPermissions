@@ -1,7 +1,7 @@
 ![topic map](https://github.com/nasduck/RafikiPermissions/blob/dev/art/topic%20map.png?raw=true)
 
-[![API](https://img.shields.io/badge/RafikiPermissions-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)&ensp;
-[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)&ensp;//todo build
+[![API](https://img.shields.io/badge/RafikiPermissions-v1.1.2-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)&ensp;
+[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)&ensp;
 [![API](https://img.shields.io/badge/License-Apche2.0-brightgreen.svg?style=flat)](https://github.com/nasduck/AfikiPermissions/blob/master/LICENSE)
 
 AfikiPermissions是为了简化Android危险权限动态申请操作，将权限申请判断和权限申请过程简化，将权限申请结果拆分成授予成功和授予失败两部分处理，使结果处理更富有逻辑性。
