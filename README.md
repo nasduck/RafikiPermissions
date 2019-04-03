@@ -4,12 +4,14 @@
 [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)&ensp;
 [![API](https://img.shields.io/badge/License-Apche2.0-brightgreen.svg?style=flat)](https://github.com/nasduck/AfikiPermissions/blob/master/LICENSE)
 
-RafikiPermissions 是为了简化 Android 危险权限动态申请操作，将权限申请判断和权限申请过程简化，将权限申请结果拆分成授予成功和授予失败两部分处理，使结果处理更富有逻辑性。组件名称 Rafiki 拉菲奇来源于狮子王里的狒狒长老，统管权限 :D
+RafikiPermissions is to simplify Android runtime permission request. The name Rafiki comes from the baboon elder who manages permission in LION KING :D
 
-* [Google developer - Dangerous Permissions(英文需翻墙)](https://developer.android.com/guide/topics/permissions/overview#permission-groups)
+* [Google developer - Dangerous Permissions](https://developer.android.com/guide/topics/permissions/overview#permission-groups)
 * [官方危险权限列表-中文](https://developer.android.google.cn/guide/topics/permissions/overview#permission-groups)
 
 ## Setup
+
+### **</u>[中文文档](https://github.com/nasduck/RafikiPermissions/blob/master/README-CN.md)</u>**
 
 Adding jitpack repository in your project's `build.gradle` file:
 
