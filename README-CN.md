@@ -31,8 +31,6 @@ dependencies {
 
 ## 基本使用
 
-#### [详细使用参考文档](https://github.com/nasduck/RafikiPermissions/wiki/%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3)
-
 假设我们需要动态获取相机的权限 `Manifest.permission.CAMERA`
 
 #### 1、添加权限
