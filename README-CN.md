@@ -138,6 +138,12 @@ if (RafikiPermissions.getInstance(this)
 }
 ```
 
+## 贡献
+
+* [Lihao Zhou](https://github.com/redrain39)
+* [Chuan DONG](https://github.com/DONGChuan)
+* [Si Cheng](1103990937@qq.com)(设计师)
+
 ## LICENSE
 ```
    Copyright (2019) Chuan Dong, Lihao Zhou
