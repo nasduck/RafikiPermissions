@@ -17,10 +17,9 @@ Adding jitpack repository in your project's `build.gradle` file:
 
 ```gradle
 allprojects {
-	repositories {
-		...
-		maven { url 'https://www.jitpack.io' }
-	}
+    repositories {
+        maven { url 'https://www.jitpack.io' }
+    }
 }
 ```
 
@@ -95,7 +94,7 @@ public void onPermissionsResultDenied(int requestCode) {
 
 Three strategies are offered:
 
-1. **PermissionResultNothingStrategy** By default. Whther permission granted or not, just do nothing.
+1. **PermissionResultNothingStrategy** By default. Whether permission granted or not, just do nothing.
 
 Screenshot：   
 ![NothingStrategy](https://github.com/nasduck/RafikiPermissions/blob/dev/art/NothingStrategy_en.gif?raw=true)
@@ -146,6 +145,12 @@ if (RafikiPermissions.getInstance(this)
     ...
 }
 ```
+
+## Contributer
+
+* [Lihao Zhou](https://github.com/redrain39)
+* [Chuan DONG](https://github.com/DONGChuan)
+* [Si Cheng](1103990937@qq.com)(Art Designer)
 
 ## LICENSE
 ```
