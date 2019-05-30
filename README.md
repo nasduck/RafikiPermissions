@@ -9,6 +9,14 @@ RafikiPermissions is to simplify Android runtime permission request. The name Ra
 * [Google developer - Dangerous Permissions](https://developer.android.com/guide/topics/permissions/overview#permission-groups)
 * [官方危险权限列表-中文](https://developer.android.google.cn/guide/topics/permissions/overview#permission-groups)
 
+## Content
+
+* [Setup](#setup)
+* [Usage](#usage)
+* [Permission handling strategies](#permission-handling-strategies)
+* [Different ways to request permissions](#different-ways-to-request-permissions)
+* [LICENSE](#license)
+
 ## Setup
 
 ### **</u>[中文文档](https://github.com/nasduck/RafikiPermissions/blob/master/README-CN.md)</u>**
