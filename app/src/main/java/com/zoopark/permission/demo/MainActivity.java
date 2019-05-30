@@ -1,11 +1,11 @@
-package com.nasduck.rafikipermissions.demo;
+package com.zoopark.permission.demo;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.nasduck.rafikipermissions.demo.strategy.StrategyActivity;
+import com.zoopark.permission.demo.strategy.StrategyActivity;
 
 public class MainActivity extends AppCompatActivity {
 

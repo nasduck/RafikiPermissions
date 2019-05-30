@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 
-import com.nasduck.rafikipermissions.R;
+import com.zoopark.permission.R;
 
 public class DialogUtils {
 

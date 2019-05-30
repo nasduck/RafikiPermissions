@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.content.ContextCompat;
 
-import com.nasduck.rafikipermissions.R;
+import com.zoopark.permission.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

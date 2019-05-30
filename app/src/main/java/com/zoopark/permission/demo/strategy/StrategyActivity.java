@@ -1,13 +1,13 @@
-package com.nasduck.rafikipermissions.demo.strategy;
+package com.zoopark.permission.demo.strategy;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.zoopark.permission.RafikiPermissions;
-import com.nasduck.rafikipermissions.demo.R;
-import com.nasduck.rafikipermissions.demo.base.BaseActivity;
-import com.nasduck.rafikipermissions.demo.utils.ToastUtils;
+import com.zoopark.permission.demo.R;
+import com.zoopark.permission.demo.base.BaseActivity;
+import com.zoopark.permission.demo.utils.ToastUtils;
 import com.zoopark.permission.result.strategy.impl.PermissionResultCustomStrategy;
 import com.zoopark.permission.result.listener.OnPermissionResultListener;
 import com.zoopark.permission.result.strategy.impl.PermissionResultGuideStrategy;

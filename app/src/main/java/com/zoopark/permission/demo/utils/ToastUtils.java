@@ -1,4 +1,4 @@
-package com.nasduck.rafikipermissions.demo.utils;
+package com.zoopark.permission.demo.utils;
 
 import android.content.Context;
 import android.widget.Toast;

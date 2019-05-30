@@ -1,4 +1,4 @@
-package com.nasduck.rafikipermissions.demo;
+package com.zoopark.permission.demo;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,15 +7,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.nasduck.rafikipermissions.demo.permissions.CalendarActivity;
-import com.nasduck.rafikipermissions.demo.permissions.CameraActivity;
-import com.nasduck.rafikipermissions.demo.permissions.ContactsActivity;
-import com.nasduck.rafikipermissions.demo.permissions.LocationActivity;
-import com.nasduck.rafikipermissions.demo.permissions.MicrophoneActivity;
-import com.nasduck.rafikipermissions.demo.permissions.PhoneActivity;
-import com.nasduck.rafikipermissions.demo.permissions.SMSActivity;
-import com.nasduck.rafikipermissions.demo.permissions.SensorsActivity;
-import com.nasduck.rafikipermissions.demo.permissions.StorageActivity;
+import com.zoopark.permission.demo.permissions.CalendarActivity;
+import com.zoopark.permission.demo.permissions.CameraActivity;
+import com.zoopark.permission.demo.permissions.ContactsActivity;
+import com.zoopark.permission.demo.permissions.LocationActivity;
+import com.zoopark.permission.demo.permissions.MicrophoneActivity;
+import com.zoopark.permission.demo.permissions.PhoneActivity;
+import com.zoopark.permission.demo.permissions.SMSActivity;
+import com.zoopark.permission.demo.permissions.SensorsActivity;
+import com.zoopark.permission.demo.permissions.StorageActivity;
 
 public class PermissionListActivity extends AppCompatActivity {
 

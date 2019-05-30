@@ -3,7 +3,7 @@ package com.zoopark.permission.result.strategy.impl;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.nasduck.rafikipermissions.R;
+import com.zoopark.permission.R;
 import com.zoopark.permission.result.dialog.DialogUtils;
 import com.zoopark.permission.result.strategy.IPermissionResultStrategy;
 import com.zoopark.permission.util.PermissionUtils;

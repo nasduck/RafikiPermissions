@@ -1,4 +1,4 @@
-package com.nasduck.rafikipermissions.demo.base;
+package com.zoopark.permission.demo.base;
 
 import android.content.Intent;
 import android.net.Uri;
