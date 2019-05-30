@@ -9,6 +9,14 @@ RafikiPermissions 是为了简化 Android 危险权限动态申请操作，将�
 * [Google developer - Dangerous Permissions(英文需翻墙)](https://developer.android.com/guide/topics/permissions/overview#permission-groups)
 * [官方危险权限列表-中文](https://developer.android.google.cn/guide/topics/permissions/overview#permission-groups)
 
+## 目录
+
+* [依赖](#依赖)
+* [基本使用](#基本使用)
+* [权限处理策略](#权限处理策略)
+* [请求权限不同的方式](#请求权限不同的方式)
+* [LICENSE](#license)
+
 ## 依赖
 步骤一：在项目的 `build.gradle` 中添加 `jitpack`
 
